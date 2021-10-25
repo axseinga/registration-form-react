@@ -5,6 +5,9 @@ const StyledApp = styled.div`
     background-image: url(${backgroundImage});
     background-size: cover;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 export default StyledApp;

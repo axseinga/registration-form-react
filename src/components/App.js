@@ -1,14 +1,17 @@
 import React from "react";
 import { Reset } from "styled-reset";
 import StyledApp from "./styled/App.styled";
+import Survey from "./Survey";
 
-function App() {
+const App = () => {
     return (
         <>
             <Reset />
-            <StyledApp />
+            <StyledApp>
+                <Survey />
+            </StyledApp>
         </>
     );
-}
+};
 
 export default App;
