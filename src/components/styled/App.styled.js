@@ -8,6 +8,7 @@ const StyledApp = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #072312;
 `;
 
 export default StyledApp;
