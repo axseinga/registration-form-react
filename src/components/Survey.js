@@ -26,6 +26,10 @@ const Survey = () => {
         setCurrentStep(curr);
     };
 
+    const handleChangeStep = (step) => {
+        setCurrentStep(step);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("form submitted");
@@ -38,7 +42,7 @@ const Survey = () => {
                     Welcome to houseplants lovers forum! Please fill in
                     registration form to continue.
                 </h1>
-                <SurveyTabs />
+                <SurveyTabs handleChangeStep={handleChangeStep}/>
                 <SurveyContent
                     onSubmit={handleSubmit}
                     nextStep={nextStep}

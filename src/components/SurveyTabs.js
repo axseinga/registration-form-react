@@ -5,10 +5,20 @@ import SurveyTabItem from "./SurveyTabItem";
 const SurveyTabs = (props) => {
     return (
         <StyledSurveyTabs>
-            <SurveyTabItem active={true} disabled={false}>
+            <SurveyTabItem
+                active={true}
+                disabled={false}
+                handleChangeStep={props.handleChangeStep}
+                step={1}
+            >
                 Step 1
             </SurveyTabItem>
-            <SurveyTabItem active={false} disabled={false}>
+            <SurveyTabItem
+                active={false}
+                disabled={false}
+                handleChangeStep={props.handleChangeStep}
+                step={2}
+            >
                 Step 2
             </SurveyTabItem>
         </StyledSurveyTabs>
