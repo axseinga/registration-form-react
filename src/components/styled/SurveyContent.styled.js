@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledSurveyContent = styled.div`
+const StyledSurveyContent = styled.form`
     background-color: rgba(202, 224, 208);
     min-width: 200px;
     padding: 3rem 1rem;

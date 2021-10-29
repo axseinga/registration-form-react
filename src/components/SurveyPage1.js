@@ -8,10 +8,20 @@ const SurveyPage1 = (props) => {
         <StyledSurveyPage>
             <Button>prev</Button>
             <section>
-                <SurveyInput name={"name"}>
+                <SurveyInput
+                    name={"name"}
+                    value={props.name}
+                    handleChange={props.setName}
+                >
                     Please tell us your name:
                 </SurveyInput>
-                <SurveyInput name={"surname"}>And you surname:</SurveyInput>
+                <SurveyInput
+                    name={"surname"}
+                    value={props.surname}
+                    handleChange={props.setSurname}
+                >
+                    And you surname:
+                </SurveyInput>
             </section>
             <div>E</div>
             <Button>next</Button>
