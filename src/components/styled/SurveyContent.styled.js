@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 const StyledSurveyContent = styled.form`
+    display: flex;
+    align-items: center;
     background-color: rgba(202, 224, 208);
     min-width: 200px;
-    padding: 3rem 1rem;
+    padding: 3rem 2rem;
     border-right: 1px solid #072312;
     border-left: 1px solid #072312;
     border-bottom: 1px solid #072312;

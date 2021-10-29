@@ -1,7 +1,5 @@
 import React from "react";
-import { Children } from "react";
 import StyledSurveyInput from "./styled/SurveyInput.styled";
-import useInputState from "./hooks/useInputState";
 
 const SurveyInput = (props) => {
     return (

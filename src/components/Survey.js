@@ -5,11 +5,28 @@ import SurveyContent from "./SurveyContent";
 import useInputState from "./hooks/useInputState";
 
 const Survey = () => {
-    const [currentStep, setCurrentStep] = useState(2);
+    const [currentStep, setCurrentStep] = useState(1);
     const [name, setName] = useInputState("");
     const [surname, setSurname] = useInputState("");
     const [email, setEmail] = useInputState("");
     const [username, setUsername] = useInputState("");
+
+    const nextStep = () => {
+        let curr = currentStep;
+        curr = curr >= 2 ? 3 : curr + 1;
+        setCurrentStep(curr);
+    };
+
+    const prevStep = () => {
+        let curr = currentStep;
+        curr = curr <= 1 ? 1 : curr - 1;
+        setCurrentStep(curr);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("form submitted");
+    };
 
     return (
         <StyledSurvey>
@@ -20,6 +37,9 @@ const Survey = () => {
                 </h1>
                 <SurveyTabs />
                 <SurveyContent
+                    onSubmit={handleSubmit}
+                    nextStep={nextStep}
+                    prevStep={prevStep}
                     currentStep={currentStep}
                     name={name}
                     setName={setName}
@@ -31,7 +51,7 @@ const Survey = () => {
                     setUsername={setUsername}
                 />
             </section>
-            <div>progress bar</div>
+            {/*} <div>progress bar</div>*/}
         </StyledSurvey>
     );
 };

@@ -1,12 +1,10 @@
 import React from "react";
 import StyledSurveyPage from "./styled/SurveyPage.styled";
 import SurveyInput from "./SurveyInput";
-import Button from "./Button";
 
 const SurveyPage1 = (props) => {
     return (
         <StyledSurveyPage>
-            <Button>prev</Button>
             <section>
                 <SurveyInput
                     name={"name"}
@@ -24,7 +22,6 @@ const SurveyPage1 = (props) => {
                 </SurveyInput>
             </section>
             <div>E</div>
-            <Button>next</Button>
         </StyledSurveyPage>
     );
 };
