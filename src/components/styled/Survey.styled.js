@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledSurvey = styled.div`
+    min-width: 350px;
     width: 70%;
     min-height: 600px;
     height: 70%;

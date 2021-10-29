@@ -7,7 +7,10 @@ const Survey = () => {
     return (
         <StyledSurvey>
             <section>
-                <h1>Let us know what you think!</h1>
+                <h1>
+                    Welcome to houseplants lovers forum! Please fill in
+                    registration form to continue.
+                </h1>
                 <SurveyTabs />
                 <SurveyContent />
             </section>

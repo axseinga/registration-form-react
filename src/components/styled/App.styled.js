@@ -9,6 +9,7 @@ const StyledApp = styled.div`
     justify-content: center;
     align-items: center;
     color: #072312;
+    font-family: "Montserrat", sans-serif;
 `;
 
 export default StyledApp;
