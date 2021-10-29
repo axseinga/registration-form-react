@@ -31,7 +31,7 @@ const SurveyContent = (props) => {
     const previousButton = () => {
         let currentStep = props.currentStep;
         if (currentStep !== 1) {
-            return <Button onClick={props.prevStep}>Prev</Button>;
+            return <Button handleClick={props.prevStep}>Prev</Button>;
         }
         return null;
     };
@@ -39,16 +39,18 @@ const SurveyContent = (props) => {
     const nextButton = () => {
         let currentStep = props.currentStep;
         if (currentStep < 3) {
-            return <Button onClick={props.nextStep}>Prev</Button>;
+            return <Button handleClick={props.nextStep}>Next</Button>;
         }
         return null;
     };
 
     return (
         <StyledSurveyContent>
-            {previousButton()}
             {currentPage(props.currentStep)}
-            {nextButton()}
+            <div>
+                {previousButton(props.prevStep)}
+                {nextButton(props.nextStep)}
+            </div>
         </StyledSurveyContent>
     );
 };

@@ -11,9 +11,12 @@ const Survey = () => {
     const [email, setEmail] = useInputState("");
     const [username, setUsername] = useInputState("");
 
+    console.log(currentStep);
+
     const nextStep = () => {
         let curr = currentStep;
         curr = curr >= 2 ? 3 : curr + 1;
+        console.log(curr);
         setCurrentStep(curr);
     };
 

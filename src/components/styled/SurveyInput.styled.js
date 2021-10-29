@@ -12,7 +12,7 @@ const StyledSurveyInput = styled.div`
     }
 
     & > input {
-        width: 70%;
+        width: 100%;
         height: 40px;
         color: #082413;
         border-radius: 15px;

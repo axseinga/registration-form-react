@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledSurveyPage = styled.div`
     display: flex;
     font-size: 1.5rem;
-    width: 100%;
+    width: 80%;
     height: 90%;
     justify-content: space-evenly;
     align-items: center;
@@ -11,7 +11,7 @@ const StyledSurveyPage = styled.div`
     & section {
         display: flex;
         flex-direction: column;
-        width: 45%;
+        width: 60%;
     }
 
     & > div {
