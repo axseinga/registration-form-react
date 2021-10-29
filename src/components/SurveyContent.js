@@ -2,6 +2,7 @@ import React from "react";
 import StyledSurveyContent from "./styled/SurveyContent.styled";
 import SurveyPage1 from "./SurveyPage1";
 import SurveyPage2 from "./SurveyPage2";
+import SurveyPage3 from "./SurveyPage3";
 import Button from "./Button";
 
 const SurveyContent = (props) => {
@@ -24,6 +25,17 @@ const SurveyContent = (props) => {
                     username={props.username}
                     setUsername={props.setUsername}
                 ></SurveyPage2>
+            );
+        }
+
+        if (currStep === 3) {
+            return (
+                <SurveyPage3
+                    password={props.password}
+                    setPassword={props.setPassword}
+                    passwordSecond={props.passwordSecond}
+                    setPasswordSecond={props.setPasswordSecond}
+                ></SurveyPage3>
             );
         }
     };

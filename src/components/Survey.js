@@ -10,6 +10,8 @@ const Survey = () => {
     const [surname, setSurname] = useInputState("");
     const [email, setEmail] = useInputState("");
     const [username, setUsername] = useInputState("");
+    const [password, setPassword] = useInputState("");
+    const [passwordSecond, setPasswordSecond] = useInputState("");
 
     console.log(currentStep);
 
@@ -56,6 +58,10 @@ const Survey = () => {
                     setEmail={setEmail}
                     username={username}
                     setUsername={setUsername}
+                    password={password}
+                    setPassword={setPassword}
+                    passwordSecond={passwordSecond}
+                    setPasswordSecond={setPasswordSecond}
                 />
             </section>
             {/*} <div>progress bar</div>*/}
