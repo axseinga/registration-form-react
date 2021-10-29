@@ -8,12 +8,11 @@ const SurveyPage1 = (props) => {
         <StyledSurveyPage>
             <Button>prev</Button>
             <section>
-                <SurveyInput name={"name"}>
-                    Please tell us your name:
+                <SurveyInput name={"email"}>
+                    Please fill in your e-mail address:
                 </SurveyInput>
-                <SurveyInput name={"surname"}>And you surname:</SurveyInput>
             </section>
-            <div>E</div>
+            <div>R</div>
             <Button>next</Button>
         </StyledSurveyPage>
     );

@@ -1,1 +1,11 @@
+@font-face {
+    font-family: "Yaogarden";
+    src: url("./Fonts/4Yeogarden-Yqa.ttf");
+    src: url("./Fonts/4Yeogarden-Yqa.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
+* {
+    box-sizing: border-box;
+}

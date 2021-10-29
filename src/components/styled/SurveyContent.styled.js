@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 const StyledSurveyContent = styled.div`
     background-color: rgba(202, 224, 208);
-    height: 80%;
     min-width: 200px;
-    padding: 2rem;
+    padding: 3rem 1rem;
     border-right: 1px solid #072312;
     border-left: 1px solid #072312;
     border-bottom: 1px solid #072312;

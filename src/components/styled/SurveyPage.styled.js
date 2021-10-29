@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledSurveyPage1 = styled.div`
+const StyledSurveyPage = styled.div`
     display: flex;
     font-size: 1.5rem;
     width: 100%;
@@ -11,12 +11,16 @@ const StyledSurveyPage1 = styled.div`
     & section {
         display: flex;
         flex-direction: column;
-        width: 50%;
+        width: 45%;
     }
 
     & > div {
         width: 20%;
+        font-family: "Yaogarden";
+        font-size: 20rem;
+        color: #cae0d0;
+        text-shadow: -1px 1px 7px #414843, 1px -1px 7px #ffffff;
     }
 `;
 
-export default StyledSurveyPage1;
+export default StyledSurveyPage;

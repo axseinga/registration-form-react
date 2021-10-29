@@ -15,7 +15,8 @@ const StyledSurvey = styled.div`
     }
 
     & h1 {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
     }
 `;
 

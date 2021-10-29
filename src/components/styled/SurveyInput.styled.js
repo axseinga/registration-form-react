@@ -12,13 +12,14 @@ const StyledSurveyInput = styled.div`
     }
 
     & > input {
-        width: 60%;
+        width: 70%;
         height: 40px;
         color: #082413;
         border-radius: 15px;
         border: none;
         background: #c3d9c8;
         box-shadow: inset 5px 5px 10px #a0b2a4, inset -5px -5px 10px #e6ffec;
+        font-size: 1.2rem;
 
         &:active,
         &:hover {
