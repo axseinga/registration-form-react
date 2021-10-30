@@ -2,6 +2,7 @@ import React from "react";
 import StyledSurveyInput from "./styled/SurveyInput.styled";
 
 const SurveyInput = (props) => {
+    const fieldName = props.name;
     return (
         <StyledSurveyInput>
             <label htmlFor={props.name}>{props.children} </label>
@@ -9,7 +10,7 @@ const SurveyInput = (props) => {
                 type="text"
                 name={props.name}
                 id={props.name}
-                value={props.value}
+                value={props.value.fieldName}
                 onChange={props.handleChange}
             ></input>
         </StyledSurveyInput>

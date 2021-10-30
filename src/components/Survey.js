@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import StyledSurvey from "./styled/Survey.styled";
 import SurveyTabs from "./SurveyTabs";
 import SurveyContent from "./SurveyContent";
@@ -6,14 +6,35 @@ import useInputState from "./hooks/useInputState";
 
 const Survey = () => {
     const [currentStep, setCurrentStep] = useState(1);
-    const [name, setName] = useInputState("");
+    const fields = {
+        name: "",
+        surname: "",
+        email: "",
+        username: "",
+        password: "",
+        secondPassword: "",
+    };
+
+    const [userInput, setUserInput] = useReducer(
+        (state, newState) => ({
+            ...state,
+            newState,
+        }),
+        fields
+    );
+
+    /*const [name, setName] = useInputState("");
     const [surname, setSurname] = useInputState("");
     const [email, setEmail] = useInputState("");
     const [username, setUsername] = useInputState("");
     const [password, setPassword] = useInputState("");
-    const [passwordSecond, setPasswordSecond] = useInputState("");
+    const [passwordSecond, setPasswordSecond] = useInputState("");*/
 
-    console.log(currentStep);
+    const handleChange = (e) => {
+        const name = e.target.name;
+        const newValue = e.target.value;
+        setUserInput({ [name]: newValue });
+    };
 
     const nextStep = () => {
         let curr = currentStep;
@@ -30,7 +51,7 @@ const Survey = () => {
 
     const handleChangeStep = (step) => {
         setCurrentStep(step);
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -44,13 +65,13 @@ const Survey = () => {
                     Welcome to houseplants lovers forum! Please fill in
                     registration form to continue.
                 </h1>
-                <SurveyTabs handleChangeStep={handleChangeStep}/>
+                <SurveyTabs handleChangeStep={handleChangeStep} />
                 <SurveyContent
                     onSubmit={handleSubmit}
                     nextStep={nextStep}
                     prevStep={prevStep}
                     currentStep={currentStep}
-                    name={name}
+                    /*name={name}
                     setName={setName}
                     surname={surname}
                     setSurname={setSurname}
@@ -61,7 +82,9 @@ const Survey = () => {
                     password={password}
                     setPassword={setPassword}
                     passwordSecond={passwordSecond}
-                    setPasswordSecond={setPasswordSecond}
+                    setPasswordSecond={setPasswordSecond}*/
+                    handleChange={handleChange}
+                    userInput={userInput}
                 />
             </section>
             {/*} <div>progress bar</div>*/}

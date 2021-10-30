@@ -6,14 +6,17 @@ import SurveyPage3 from "./SurveyPage3";
 import Button from "./Button";
 
 const SurveyContent = (props) => {
+    console.log(props.userInput);
     const currentPage = (currStep) => {
         if (currStep === 1) {
             return (
                 <SurveyPage1
-                    name={props.name}
+                    handleChange={props.handleChange}
+                    userInput={props.userInput}
+                    /*name={props.name}
                     setName={props.setName}
                     surname={props.surname}
-                    setSurname={props.setSurname}
+                    setSurname={props.setSurname}*/
                 ></SurveyPage1>
             );
         }
