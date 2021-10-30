@@ -3,8 +3,9 @@ import StyledSurveyInput from "./styled/SurveyInput.styled";
 
 const SurveyInput = (props) => {
     const fieldName = props.name;
+    console.log(props.isradio);
     return (
-        <StyledSurveyInput>
+        <StyledSurveyInput isradio={props.isradio}>
             <label htmlFor={props.name}>{props.children} </label>
             <input
                 type={props.type}

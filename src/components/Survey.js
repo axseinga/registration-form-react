@@ -30,14 +30,13 @@ const Survey = () => {
 
     const nextStep = () => {
         let curr = currentStep;
-        curr = curr >= 2 ? 3 : curr + 1;
-        console.log(curr);
+        curr = curr + 1;
         setCurrentStep(curr);
     };
 
     const prevStep = () => {
         let curr = currentStep;
-        curr = curr <= 1 ? 1 : curr - 1;
+        curr = curr - 1;
         setCurrentStep(curr);
     };
 

@@ -14,6 +14,10 @@ const StyledSurveyPage = styled.div`
         width: 60%;
     }
 
+    & h2 {
+        margin-bottom: 1rem;
+    }
+
     & > div {
         width: 20%;
         font-family: "Yaogarden";
