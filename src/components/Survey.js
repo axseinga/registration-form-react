@@ -18,17 +18,10 @@ const Survey = () => {
     const [userInput, setUserInput] = useReducer(
         (state, newState) => ({
             ...state,
-            newState,
+            ...newState,
         }),
         fields
     );
-
-    /*const [name, setName] = useInputState("");
-    const [surname, setSurname] = useInputState("");
-    const [email, setEmail] = useInputState("");
-    const [username, setUsername] = useInputState("");
-    const [password, setPassword] = useInputState("");
-    const [passwordSecond, setPasswordSecond] = useInputState("");*/
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -71,18 +64,6 @@ const Survey = () => {
                     nextStep={nextStep}
                     prevStep={prevStep}
                     currentStep={currentStep}
-                    /*name={name}
-                    setName={setName}
-                    surname={surname}
-                    setSurname={setSurname}
-                    email={email}
-                    setEmail={setEmail}
-                    username={username}
-                    setUsername={setUsername}
-                    password={password}
-                    setPassword={setPassword}
-                    passwordSecond={passwordSecond}
-                    setPasswordSecond={setPasswordSecond}*/
                     handleChange={handleChange}
                     userInput={userInput}
                 />

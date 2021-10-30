@@ -6,27 +6,20 @@ import SurveyPage3 from "./SurveyPage3";
 import Button from "./Button";
 
 const SurveyContent = (props) => {
-    console.log(props.userInput);
     const currentPage = (currStep) => {
         if (currStep === 1) {
             return (
                 <SurveyPage1
                     handleChange={props.handleChange}
                     userInput={props.userInput}
-                    /*name={props.name}
-                    setName={props.setName}
-                    surname={props.surname}
-                    setSurname={props.setSurname}*/
                 ></SurveyPage1>
             );
         }
         if (currStep === 2) {
             return (
                 <SurveyPage2
-                    email={props.email}
-                    setEmail={props.setEmail}
-                    username={props.username}
-                    setUsername={props.setUsername}
+                    handleChange={props.handleChange}
+                    userInput={props.userInput}
                 ></SurveyPage2>
             );
         }
@@ -34,10 +27,8 @@ const SurveyContent = (props) => {
         if (currStep === 3) {
             return (
                 <SurveyPage3
-                    password={props.password}
-                    setPassword={props.setPassword}
-                    passwordSecond={props.passwordSecond}
-                    setPasswordSecond={props.setPasswordSecond}
+                    handleChange={props.handleChange}
+                    userInput={props.userInput}
                 ></SurveyPage3>
             );
         }

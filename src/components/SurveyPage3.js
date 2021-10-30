@@ -8,15 +8,17 @@ const SurveyPage3 = (props) => {
             <section>
                 <SurveyInput
                     name={"password"}
-                    value={props.email}
-                    handleChange={props.setEmail}
+                    handleChange={props.handleChange}
+                    value={props.userInput}
+                    type="password"
                 >
                     Please choose your password:
                 </SurveyInput>
                 <SurveyInput
                     name={"passwordsecond"}
-                    value={props.username}
-                    handleChange={props.setUsername}
+                    handleChange={props.handleChange}
+                    value={props.userInput}
+                    type="password"
                 >
                     Confirm your password:
                 </SurveyInput>

@@ -8,15 +8,15 @@ const SurveyPage2 = (props) => {
             <section>
                 <SurveyInput
                     name={"email"}
-                    value={props.email}
-                    handleChange={props.setEmail}
+                    handleChange={props.handleChange}
+                    value={props.userInput}
                 >
                     Please fill in your e-mail address:
                 </SurveyInput>
                 <SurveyInput
                     name={"username"}
-                    value={props.username}
-                    handleChange={props.setUsername}
+                    handleChange={props.handleChange}
+                    value={props.userInput}
                 >
                     And username:
                 </SurveyInput>

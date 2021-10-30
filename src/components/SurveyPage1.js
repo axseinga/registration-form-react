@@ -15,13 +15,13 @@ const SurveyPage1 = (props) => {
                 >
                     Please tell us your name:
                 </SurveyInput>
-                {/*<SurveyInput
+                <SurveyInput
                     name={"surname"}
-                    value={props.surname}
-                    handleChange={props.setSurname}
+                    handleChange={props.handleChange}
+                    value={props.userInput}
                 >
                     And you surname:
-                </SurveyInput>*/}
+                </SurveyInput>
             </section>
             <div>E</div>
         </StyledSurveyPage>
