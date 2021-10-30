@@ -6,7 +6,7 @@ const SurveyTabs = (props) => {
     return (
         <StyledSurveyTabs>
             <SurveyTabItem
-                active={true}
+                active={props.currStep === 1 ? true : false}
                 disabled={false}
                 handleChangeStep={props.handleChangeStep}
                 step={1}
@@ -14,7 +14,7 @@ const SurveyTabs = (props) => {
                 Step 1
             </SurveyTabItem>
             <SurveyTabItem
-                active={false}
+                active={props.currStep === 2 ? true : false}
                 disabled={false}
                 handleChangeStep={props.handleChangeStep}
                 step={2}
@@ -22,7 +22,7 @@ const SurveyTabs = (props) => {
                 Step 2
             </SurveyTabItem>
             <SurveyTabItem
-                active={false}
+                active={props.currStep === 3 ? true : false}
                 disabled={false}
                 handleChangeStep={props.handleChangeStep}
                 step={3}

@@ -2,7 +2,6 @@ import React, { useState, useReducer } from "react";
 import StyledSurvey from "./styled/Survey.styled";
 import SurveyTabs from "./SurveyTabs";
 import SurveyContent from "./SurveyContent";
-import useInputState from "./hooks/useInputState";
 
 const Survey = () => {
     const [currentStep, setCurrentStep] = useState(1);
@@ -58,7 +57,10 @@ const Survey = () => {
                     Welcome to houseplants lovers forum! Please fill in
                     registration form to continue.
                 </h1>
-                <SurveyTabs handleChangeStep={handleChangeStep} />
+                <SurveyTabs
+                    handleChangeStep={handleChangeStep}
+                    currStep={currentStep}
+                />
                 <SurveyContent
                     onSubmit={handleSubmit}
                     nextStep={nextStep}
