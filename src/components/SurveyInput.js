@@ -7,7 +7,7 @@ const SurveyInput = (props) => {
         <StyledSurveyInput>
             <label htmlFor={props.name}>{props.children} </label>
             <input
-                type="text"
+                type={props.type}
                 name={props.name}
                 id={props.name}
                 value={props.value.fieldName}
