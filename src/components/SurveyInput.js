@@ -8,6 +8,7 @@ const SurveyInput = (props) => {
         <StyledSurveyInput
             isradio={props.isradio}
             ischeckbox={props.ischeckbox}
+            isreg={props.isreg}
         >
             <label htmlFor={props.name}>{props.children} </label>
             <input

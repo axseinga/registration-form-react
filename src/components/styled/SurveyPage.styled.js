@@ -19,6 +19,18 @@ const StyledSurveyPage = styled.div`
         grid-template-columns: repeat(2, 1fr);
     }
 
+    & .page-six {
+        font-size: 1.1rem;
+        width: 100%;
+
+        & div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0.3rem 0;
+        }
+    }
+
     & h2 {
         margin-bottom: 1rem;
     }
