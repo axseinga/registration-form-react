@@ -5,7 +5,10 @@ const SurveyInput = (props) => {
     const fieldName = props.name;
     console.log(props.isradio);
     return (
-        <StyledSurveyInput isradio={props.isradio}>
+        <StyledSurveyInput
+            isradio={props.isradio}
+            ischeckbox={props.ischeckbox}
+        >
             <label htmlFor={props.name}>{props.children} </label>
             <input
                 type={props.type}

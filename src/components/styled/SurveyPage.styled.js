@@ -14,8 +14,17 @@ const StyledSurveyPage = styled.div`
         width: 60%;
     }
 
+    & section > div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     & h2 {
         margin-bottom: 1rem;
+    }
+
+    & span {
+        font-size: 1rem;
     }
 
     & > div {
