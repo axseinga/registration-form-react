@@ -31,6 +31,15 @@ const StyledSurveyPage = styled.div`
         }
     }
 
+    & .page-seven {
+        align-items: center;
+        justify-content: center;
+
+        & h2 {
+            margin-bottom: 3rem;
+        }
+    }
+
     & h2 {
         margin-bottom: 1rem;
     }

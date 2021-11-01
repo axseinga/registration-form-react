@@ -53,6 +53,14 @@ const SurveyTabs = (props) => {
             >
                 Step 6
             </SurveyTabItem>
+            <SurveyTabItem
+                active={props.currStep === 7 ? true : false}
+                disabled={false}
+                handleChangeStep={props.handleChangeStep}
+                step={7}
+            >
+                Step 7
+            </SurveyTabItem>
         </StyledSurveyTabs>
     );
 };

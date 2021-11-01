@@ -6,6 +6,7 @@ import SurveyPage3 from "./SurveyPage3";
 import SurveyPage4 from "./SurveyPage4";
 import SurveyPage5 from "./SurveyPage5";
 import SurveyPage6 from "./SurveyPage6";
+import SurveyPage7 from "./SurveyPage7";
 import Button from "./Button";
 
 const SurveyContent = (props) => {
@@ -44,6 +45,9 @@ const SurveyContent = (props) => {
         if (currStep === 6) {
             return <SurveyPage6></SurveyPage6>;
         }
+        if (currStep === 7) {
+            return <SurveyPage7></SurveyPage7>;
+        }
     };
 
     const previousButton = () => {
@@ -56,7 +60,7 @@ const SurveyContent = (props) => {
 
     const nextButton = () => {
         let currentStep = props.currentStep;
-        if (currentStep < 6) {
+        if (currentStep < 7) {
             return <Button handleClick={props.nextStep}>Next</Button>;
         }
         return null;
