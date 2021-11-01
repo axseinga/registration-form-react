@@ -2,6 +2,7 @@ import React, { useState, useReducer } from "react";
 import StyledSurvey from "./styled/Survey.styled";
 import SurveyTabs from "./SurveyTabs";
 import SurveyContent from "./SurveyContent";
+import SurveyProgressBar from "./SurveyProgressBar";
 
 const Survey = () => {
     const [currentStep, setCurrentStep] = useState(1);
@@ -14,7 +15,7 @@ const Survey = () => {
         secondPassword: "",
         plantsAmount: "",
         plantsFavourites: [],
-        rules: { rule1: false, rule2: false, rule3: false, rule4: false },
+        rules: [],
     };
 
     const [userInput, setUserInput] = useReducer(
@@ -50,6 +51,29 @@ const Survey = () => {
             setUserInput((prevState) => ({
                 ...prevState,
                 plantsFavourites: [...anotherNewState],
+            }));
+        }
+    };
+
+    const handleChangeRules = (e) => {
+        const checked = e.target.checked;
+        const newValue = e.target.name;
+        if (checked && !userInput.rules.includes(newValue)) {
+            const newState = userInput.rules.push(newValue);
+            setUserInput((prevState) => ({
+                ...prevState,
+                rules: [...newState],
+            }));
+        } else if (!checked && userInput.rules.includes(newValue)) {
+            console.log("unchecked clicked");
+            const anotherNewState = userInput.rules.filter(
+                (rule) => rule !== newValue
+            );
+            /* problematyczna czesc, state sie nie updatuje*/
+            console.log(anotherNewState);
+            setUserInput((prevState) => ({
+                ...prevState,
+                rules: [...anotherNewState],
             }));
         }
     };
@@ -93,10 +117,13 @@ const Survey = () => {
                     currentStep={currentStep}
                     handleChange={handleChange}
                     handleChangeCheckbox={handleChangeCheckbox}
+                    handleChangeRules={handleChangeRules}
                     userInput={userInput}
                 />
+                <div className="ProgressBarContainer">
+                    <SurveyProgressBar />
+                </div>
             </section>
-            {/*} <div>progress bar</div>*/}
         </StyledSurvey>
     );
 };

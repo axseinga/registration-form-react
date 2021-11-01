@@ -52,7 +52,11 @@ const SurveyContent = (props) => {
             );
         }
         if (currStep === 6) {
-            return <SurveyPage6></SurveyPage6>;
+            return (
+                <SurveyPage6
+                    handleChangeRules={props.handleChangeRules}
+                ></SurveyPage6>
+            );
         }
         if (currStep === 7) {
             return <SurveyPage7></SurveyPage7>;

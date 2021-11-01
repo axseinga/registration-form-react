@@ -11,6 +11,12 @@ const StyledSurvey = styled.div`
     & section {
         padding: 2rem;
         height: 75%;
+
+        & .ProgressBarContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     & h1 {

@@ -12,6 +12,7 @@ const SurveyPage6 = (props) => {
                         name="rule1"
                         type="checkbox"
                         value="rule1"
+                        handleChange={props.handleChangeRules}
                     ></SurveySwitch>
                 </div>
                 <div>
@@ -20,6 +21,7 @@ const SurveyPage6 = (props) => {
                         name="rule2"
                         type="checkbox"
                         value="rule2"
+                        handleChange={props.handleChangeRules}
                     ></SurveySwitch>
                 </div>
                 <div>
@@ -28,6 +30,7 @@ const SurveyPage6 = (props) => {
                         name="rule3"
                         type="checkbox"
                         value="rule3"
+                        handleChange={props.handleChangeRules}
                     ></SurveySwitch>
                 </div>
                 <div>
@@ -37,6 +40,7 @@ const SurveyPage6 = (props) => {
                         name="rule4"
                         type="checkbox"
                         value="rule4"
+                        handleChange={props.handleChangeRules}
                     ></SurveySwitch>
                 </div>
             </section>
