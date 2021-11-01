@@ -9,7 +9,7 @@ const SurveyPage1 = (props) => {
                 <SurveyInput
                     name={"name"}
                     handleChange={props.handleChange}
-                    value={props.userInput}
+                    value={props.userInput["name"]}
                     type="text"
                 >
                     Please tell us your name:
@@ -17,7 +17,7 @@ const SurveyPage1 = (props) => {
                 <SurveyInput
                     name={"surname"}
                     handleChange={props.handleChange}
-                    value={props.userInput}
+                    value={props.userInput["surname"]}
                     type="text"
                 >
                     And you surname:

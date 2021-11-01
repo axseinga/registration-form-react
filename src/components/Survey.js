@@ -12,6 +12,9 @@ const Survey = () => {
         username: "",
         password: "",
         secondPassword: "",
+        plantsAmount: "",
+        plantsFavourites: [],
+        rules: { rule1: false, rule2: false, rule3: false, rule4: false },
     };
 
     const [userInput, setUserInput] = useReducer(
@@ -25,6 +28,7 @@ const Survey = () => {
     const handleChange = (e) => {
         const name = e.target.name;
         const newValue = e.target.value;
+        console.log(name, newValue);
         setUserInput({ [name]: newValue });
     };
 

@@ -9,7 +9,7 @@ const SurveyPage3 = (props) => {
                 <SurveyInput
                     name={"password"}
                     handleChange={props.handleChange}
-                    value={props.userInput}
+                    value={props.userInput["password"]}
                     type="password"
                 >
                     Please choose your password:
@@ -17,7 +17,7 @@ const SurveyPage3 = (props) => {
                 <SurveyInput
                     name={"passwordsecond"}
                     handleChange={props.handleChange}
-                    value={props.userInput}
+                    value={props.userInput["passwordsecond"]}
                     type="password"
                 >
                     Confirm your password:

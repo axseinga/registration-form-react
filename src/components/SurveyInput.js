@@ -2,8 +2,6 @@ import React from "react";
 import StyledSurveyInput from "./styled/SurveyInput.styled";
 
 const SurveyInput = (props) => {
-    const fieldName = props.name;
-    console.log(props.isradio);
     return (
         <StyledSurveyInput
             isradio={props.isradio}
@@ -15,7 +13,7 @@ const SurveyInput = (props) => {
                 type={props.type}
                 name={props.name}
                 id={props.name}
-                value={props.value.fieldName}
+                value={props.value}
                 onChange={props.handleChange}
             ></input>
         </StyledSurveyInput>

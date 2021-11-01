@@ -37,7 +37,12 @@ const SurveyContent = (props) => {
             );
         }
         if (currStep === 4) {
-            return <SurveyPage4></SurveyPage4>;
+            return (
+                <SurveyPage4
+                    handleChange={props.handleChange}
+                    userInput={props.userInput}
+                ></SurveyPage4>
+            );
         }
         if (currStep === 5) {
             return <SurveyPage5></SurveyPage5>;

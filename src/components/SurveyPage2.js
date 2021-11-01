@@ -9,7 +9,7 @@ const SurveyPage2 = (props) => {
                 <SurveyInput
                     name={"email"}
                     handleChange={props.handleChange}
-                    value={props.userInput}
+                    value={props.userInput["email"]}
                     type="text"
                 >
                     Please fill in your e-mail address:
@@ -17,7 +17,7 @@ const SurveyPage2 = (props) => {
                 <SurveyInput
                     name={"username"}
                     handleChange={props.handleChange}
-                    value={props.userInput}
+                    value={props.userInput["username"]}
                     type="text"
                 >
                     And username:
