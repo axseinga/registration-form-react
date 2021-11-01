@@ -39,17 +39,17 @@ const StyledSurveyProgressBar = styled.div`
             right: 0;
             background-image: linear-gradient(
                 -45deg,
-                rgba(255, 255, 255, 0.2) 25%,
+                #94a598 25%,
                 transparent 25%,
                 transparent 50%,
-                rgba(255, 255, 255, 0.2) 50%,
-                rgba(255, 255, 255, 0.2) 75%,
+                #94a598 50%,
+                #94a598 75%,
                 transparent 75%,
                 transparent
             );
             z-index: 1;
             background-size: 50px 50px;
-            animation: move 2s linear infinite;
+            animation: move 3s linear infinite;
             border-top-right-radius: 8px;
             border-bottom-right-radius: 8px;
             border-top-left-radius: 20px;
