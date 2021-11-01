@@ -16,6 +16,7 @@ const SurveyPage5 = (props) => {
                         type="checkbox"
                         value={"cacti"}
                         ischeckbox={true}
+                        handleChange={props.handleChangeCheckbox}
                     >
                         Cacti & succulents
                     </SurveyInput>
@@ -24,6 +25,7 @@ const SurveyPage5 = (props) => {
                         type="checkbox"
                         value={"aroids"}
                         ischeckbox={true}
+                        handleChange={props.handleChangeCheckbox}
                     >
                         Monsteras & aroids
                     </SurveyInput>
@@ -32,6 +34,7 @@ const SurveyPage5 = (props) => {
                         type="checkbox"
                         value={"marantas"}
                         ischeckbox={true}
+                        handleChange={props.handleChangeCheckbox}
                     >
                         Marantas & Calatheas
                     </SurveyInput>
@@ -40,6 +43,7 @@ const SurveyPage5 = (props) => {
                         type="checkbox"
                         value={"begonias"}
                         ischeckbox={true}
+                        handleChange={props.handleChangeCheckbox}
                     >
                         Begonias
                     </SurveyInput>
@@ -48,6 +52,7 @@ const SurveyPage5 = (props) => {
                         type="checkbox"
                         value={"alocasias"}
                         ischeckbox={true}
+                        handleChange={props.handleChangeCheckbox}
                     >
                         Alocasias
                     </SurveyInput>
@@ -56,6 +61,7 @@ const SurveyPage5 = (props) => {
                         type="checkbox"
                         value={"palms"}
                         ischeckbox={true}
+                        handleChange={props.handleChangeCheckbox}
                     >
                         Palms & arecas
                     </SurveyInput>
@@ -64,6 +70,7 @@ const SurveyPage5 = (props) => {
                         type="checkbox"
                         value={"ferns"}
                         ischeckbox={true}
+                        handleChange={props.handleChangeCheckbox}
                     >
                         Ferns
                     </SurveyInput>
@@ -72,6 +79,7 @@ const SurveyPage5 = (props) => {
                         type="checkbox"
                         value={"orchids"}
                         ischeckbox={true}
+                        handleChange={props.handleChangeCheckbox}
                     >
                         Orchids
                     </SurveyInput>

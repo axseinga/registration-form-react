@@ -45,7 +45,11 @@ const SurveyContent = (props) => {
             );
         }
         if (currStep === 5) {
-            return <SurveyPage5></SurveyPage5>;
+            return (
+                <SurveyPage5
+                    handleChangeCheckbox={props.handleChangeCheckbox}
+                ></SurveyPage5>
+            );
         }
         if (currStep === 6) {
             return <SurveyPage6></SurveyPage6>;

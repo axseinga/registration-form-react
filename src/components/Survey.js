@@ -28,8 +28,30 @@ const Survey = () => {
     const handleChange = (e) => {
         const name = e.target.name;
         const newValue = e.target.value;
-        console.log(name, newValue);
         setUserInput({ [name]: newValue });
+    };
+
+    const handleChangeCheckbox = (e) => {
+        const checked = e.target.checked;
+        const newValue = e.target.value;
+        if (checked && !userInput.plantsFavourites.includes(newValue)) {
+            const newState = userInput.plantsFavourites.push(newValue);
+            setUserInput((prevState) => ({
+                ...prevState,
+                plantsFavourites: [...newState],
+            }));
+        } else if (!checked && userInput.plantsFavourites.includes(newValue)) {
+            console.log("unchecked clicked");
+            const anotherNewState = userInput.plantsFavourites.filter(
+                (fav) => fav !== newValue
+            );
+            /* problematyczna czesc, state sie nie updatuje*/
+            console.log(anotherNewState);
+            setUserInput((prevState) => ({
+                ...prevState,
+                plantsFavourites: [...anotherNewState],
+            }));
+        }
     };
 
     const nextStep = () => {
@@ -70,6 +92,7 @@ const Survey = () => {
                     prevStep={prevStep}
                     currentStep={currentStep}
                     handleChange={handleChange}
+                    handleChangeCheckbox={handleChangeCheckbox}
                     userInput={userInput}
                 />
             </section>
