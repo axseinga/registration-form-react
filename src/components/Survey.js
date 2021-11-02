@@ -15,7 +15,7 @@ const Survey = () => {
         secondPassword: {
             value: "",
         },
-        plantsAmount: { value: "" },
+        plantsAmount: "",
         plantsFavourites: {
             cacti: false,
             aroids: false,
@@ -32,12 +32,10 @@ const Survey = () => {
 
     /* 
 
-    {type: 'UPDATE_VALUE',
+    {
     type: 'UPDATE_iSTOUCHED',
     type: 'UPDATE_HASERROR',
     type: 'UPDATE_ERROR',
-    type: 'UPDATE_FAV',
-    type: "UPDATE_RULES"
 }
 
     */
@@ -48,6 +46,11 @@ const Survey = () => {
                 return {
                     ...state,
                     [action.name]: { value: action.newValue },
+                };
+            case "UPDATE_AMOUNT":
+                return {
+                    ...state,
+                    plantsAmount: action.name,
                 };
             case "UPDATE_FAV":
                 return {
@@ -62,7 +65,7 @@ const Survey = () => {
                     ...state,
                     rules: {
                         ...state.rules,
-                        [action.name]: action.newFav,
+                        [action.name]: action.new,
                     },
                 };
             default:
@@ -71,12 +74,6 @@ const Survey = () => {
     };
 
     const [userInput, dispatch] = useReducer(reducer, fields);
-
-    const handleChange = (dispatch) => {
-        /*const name = e.target.name;
-        const newValue = e.target.value;
-        setUserInput({ [name]: { value: newValue } });*/
-    };
 
     const nextStep = () => {
         let curr = currentStep;
@@ -117,7 +114,6 @@ const Survey = () => {
                     currentStep={currentStep}
                     dispatch={dispatch}
                     plantsState={userInput}
-                    handleChange={handleChange}
                 />
                 <div className="ProgressBarContainer">
                     <SurveyProgressBar />

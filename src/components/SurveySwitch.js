@@ -14,7 +14,7 @@ const SurveySwitch = (props) => {
                         type: props.action,
                         name: props.name,
                         newValue: e.target.value,
-                        newFav: !props.isChecked,
+                        new: !props.isChecked,
                     })
                 }
                 checked={props.isChecked}

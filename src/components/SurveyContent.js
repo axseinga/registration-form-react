@@ -25,7 +25,7 @@ const SurveyContent = (props) => {
             return (
                 <SurveyPage4
                     dispatch={props.dispatch}
-                    plantsFavState={props.plantsState.plantsAmount}
+                    plantsFavState={props.plantsState}
                 ></SurveyPage4>
             );
         }
