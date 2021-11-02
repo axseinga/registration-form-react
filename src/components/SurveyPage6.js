@@ -3,6 +3,7 @@ import StyledSurveyPage from "./styled/SurveyPage.styled";
 import SurveySwitch from "./SurveySwitch";
 
 const SurveyPage6 = (props) => {
+    const state = props.plantsFavState.rules;
     return (
         <StyledSurveyPage>
             <section className="page-six">
@@ -12,7 +13,9 @@ const SurveyPage6 = (props) => {
                         name="rule1"
                         type="checkbox"
                         value="rule1"
-                        handleChange={props.handleChangeRules}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_RULES"}
+                        isChecked={state["rule1"]}
                     ></SurveySwitch>
                 </div>
                 <div>
@@ -21,7 +24,9 @@ const SurveyPage6 = (props) => {
                         name="rule2"
                         type="checkbox"
                         value="rule2"
-                        handleChange={props.handleChangeRules}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_RULES"}
+                        isChecked={state["rule2"]}
                     ></SurveySwitch>
                 </div>
                 <div>
@@ -30,7 +35,9 @@ const SurveyPage6 = (props) => {
                         name="rule3"
                         type="checkbox"
                         value="rule3"
-                        handleChange={props.handleChangeRules}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_RULES"}
+                        isChecked={state["rule3"]}
                     ></SurveySwitch>
                 </div>
                 <div>
@@ -40,7 +47,9 @@ const SurveyPage6 = (props) => {
                         name="rule4"
                         type="checkbox"
                         value="rule4"
-                        handleChange={props.handleChangeRules}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_RULES"}
+                        isChecked={state["rule4"]}
                     ></SurveySwitch>
                 </div>
             </section>

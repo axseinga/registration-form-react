@@ -12,6 +12,7 @@ const SurveyPage4 = (props) => {
                     type="radio"
                     value={"0-20"}
                     isradio={true}
+                    dispatch={props.dispatch}
                     handleChange={props.handleChange}
                 >
                     0 - 20
@@ -21,6 +22,7 @@ const SurveyPage4 = (props) => {
                     type="radio"
                     value={"21-40"}
                     isradio={true}
+                    dispatch={props.dispatch}
                     handleChange={props.handleChange}
                 >
                     21 - 40
@@ -30,6 +32,7 @@ const SurveyPage4 = (props) => {
                     type="radio"
                     value={"41-60"}
                     isradio={true}
+                    dispatch={props.dispatch}
                     handleChange={props.handleChange}
                 >
                     41 - 60
@@ -39,6 +42,7 @@ const SurveyPage4 = (props) => {
                     type="radio"
                     value={"61-more"}
                     isradio={true}
+                    dispatch={props.dispatch}
                     handleChange={props.handleChange}
                 >
                     61 or more

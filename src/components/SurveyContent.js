@@ -12,49 +12,36 @@ import Button from "./Button";
 const SurveyContent = (props) => {
     const currentPage = (currStep) => {
         if (currStep === 1) {
-            return (
-                <SurveyPage1
-                    handleChange={props.handleChange}
-                    userInput={props.userInput}
-                ></SurveyPage1>
-            );
+            return <SurveyPage1 dispatch={props.dispatch}></SurveyPage1>;
         }
         if (currStep === 2) {
-            return (
-                <SurveyPage2
-                    handleChange={props.handleChange}
-                    userInput={props.userInput}
-                ></SurveyPage2>
-            );
+            return <SurveyPage2 dispatch={props.dispatch}></SurveyPage2>;
         }
 
         if (currStep === 3) {
-            return (
-                <SurveyPage3
-                    handleChange={props.handleChange}
-                    userInput={props.userInput}
-                ></SurveyPage3>
-            );
+            return <SurveyPage3 dispatch={props.dispatch}></SurveyPage3>;
         }
         if (currStep === 4) {
             return (
                 <SurveyPage4
-                    handleChange={props.handleChange}
-                    userInput={props.userInput}
+                    dispatch={props.dispatch}
+                    plantsFavState={props.plantsState.plantsAmount}
                 ></SurveyPage4>
             );
         }
         if (currStep === 5) {
             return (
                 <SurveyPage5
-                    handleChangeCheckbox={props.handleChangeCheckbox}
+                    dispatch={props.dispatch}
+                    plantsFavState={props.plantsState}
                 ></SurveyPage5>
             );
         }
         if (currStep === 6) {
             return (
                 <SurveyPage6
-                    handleChangeRules={props.handleChangeRules}
+                    dispatch={props.dispatch}
+                    plantsFavState={props.plantsState}
                 ></SurveyPage6>
             );
         }

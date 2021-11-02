@@ -14,7 +14,15 @@ const SurveyInput = (props) => {
                 name={props.name}
                 id={props.name}
                 value={props.value}
-                onChange={props.handleChange}
+                onChange={(e) =>
+                    props.dispatch({
+                        type: props.action,
+                        name: props.name,
+                        newValue: e.target.value,
+                        newFav: !props.isChecked,
+                    })
+                }
+                checked={props.isChecked}
             ></input>
         </StyledSurveyInput>
     );

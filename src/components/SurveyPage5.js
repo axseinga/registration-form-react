@@ -3,6 +3,7 @@ import StyledSurveyPage from "./styled/SurveyPage.styled";
 import SurveyInput from "./SurveyInput";
 
 const SurveyPage5 = (props) => {
+    const state = props.plantsFavState.plantsFavourites;
     return (
         <StyledSurveyPage>
             <section>
@@ -12,74 +13,90 @@ const SurveyPage5 = (props) => {
                 </h2>
                 <div>
                     <SurveyInput
-                        name={"type"}
+                        name={"cacti"}
                         type="checkbox"
                         value={"cacti"}
                         ischeckbox={true}
-                        handleChange={props.handleChangeCheckbox}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_FAV"}
+                        isChecked={state["cacti"]}
                     >
                         Cacti & succulents
                     </SurveyInput>
                     <SurveyInput
-                        name={"type"}
+                        name={"aroids"}
                         type="checkbox"
                         value={"aroids"}
                         ischeckbox={true}
-                        handleChange={props.handleChangeCheckbox}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_FAV"}
+                        isChecked={state["aroids"]}
                     >
                         Monsteras & aroids
                     </SurveyInput>
                     <SurveyInput
-                        name={"type"}
+                        name={"marantas"}
                         type="checkbox"
                         value={"marantas"}
                         ischeckbox={true}
-                        handleChange={props.handleChangeCheckbox}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_FAV"}
+                        isChecked={state["marantas"]}
                     >
                         Marantas & Calatheas
                     </SurveyInput>
                     <SurveyInput
-                        name={"type"}
+                        name={"begonias"}
                         type="checkbox"
                         value={"begonias"}
                         ischeckbox={true}
-                        handleChange={props.handleChangeCheckbox}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_FAV"}
+                        isChecked={state["begonias"]}
                     >
                         Begonias
                     </SurveyInput>
                     <SurveyInput
-                        name={"type"}
+                        name={"alocasias"}
                         type="checkbox"
                         value={"alocasias"}
                         ischeckbox={true}
-                        handleChange={props.handleChangeCheckbox}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_FAV"}
+                        isChecked={state["alocasias"]}
                     >
                         Alocasias
                     </SurveyInput>
                     <SurveyInput
-                        name={"type"}
+                        name={"palms"}
                         type="checkbox"
                         value={"palms"}
                         ischeckbox={true}
-                        handleChange={props.handleChangeCheckbox}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_FAV"}
+                        isChecked={state["palms"]}
                     >
                         Palms & arecas
                     </SurveyInput>
                     <SurveyInput
-                        name={"type"}
+                        name={"ferns"}
                         type="checkbox"
                         value={"ferns"}
                         ischeckbox={true}
-                        handleChange={props.handleChangeCheckbox}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_FAV"}
+                        isChecked={state["ferns"]}
                     >
                         Ferns
                     </SurveyInput>
                     <SurveyInput
-                        name={"type"}
+                        name={"orchids"}
                         type="checkbox"
                         value={"orchids"}
                         ischeckbox={true}
-                        handleChange={props.handleChangeCheckbox}
+                        dispatch={props.dispatch}
+                        action={"UPDATE_FAV"}
+                        isChecked={state["orchids"]}
                     >
                         Orchids
                     </SurveyInput>

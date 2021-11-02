@@ -7,75 +7,75 @@ import SurveyProgressBar from "./SurveyProgressBar";
 const Survey = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const fields = {
-        name: "",
-        surname: "",
-        email: "",
-        username: "",
-        password: "",
-        secondPassword: "",
-        plantsAmount: "",
-        plantsFavourites: [],
-        rules: [],
+        name: { value: "" },
+        surname: { value: "" },
+        email: { value: "" },
+        username: { value: "" },
+        password: { value: "" },
+        secondPassword: {
+            value: "",
+        },
+        plantsAmount: { value: "" },
+        plantsFavourites: {
+            cacti: false,
+            aroids: false,
+            marantas: false,
+            begonias: false,
+            alocasias: false,
+            palms: false,
+            ferns: false,
+            orchids: false,
+        },
+        rules: { rule1: false, rule2: false, rule3: false, rule4: false },
+        isFormValid: false,
     };
 
-    const [userInput, setUserInput] = useReducer(
-        (state, newState) => ({
-            ...state,
-            ...newState,
-        }),
-        fields
-    );
+    /* 
 
-    const handleChange = (e) => {
-        const name = e.target.name;
-        const newValue = e.target.value;
-        setUserInput({ [name]: newValue });
-    };
+    {type: 'UPDATE_VALUE',
+    type: 'UPDATE_iSTOUCHED',
+    type: 'UPDATE_HASERROR',
+    type: 'UPDATE_ERROR',
+    type: 'UPDATE_FAV',
+    type: "UPDATE_RULES"
+}
 
-    const handleChangeCheckbox = (e) => {
-        const checked = e.target.checked;
-        const newValue = e.target.value;
-        if (checked && !userInput.plantsFavourites.includes(newValue)) {
-            const newState = userInput.plantsFavourites.push(newValue);
-            setUserInput((prevState) => ({
-                ...prevState,
-                plantsFavourites: [...newState],
-            }));
-        } else if (!checked && userInput.plantsFavourites.includes(newValue)) {
-            console.log("unchecked clicked");
-            const anotherNewState = userInput.plantsFavourites.filter(
-                (fav) => fav !== newValue
-            );
-            /* problematyczna czesc, state sie nie updatuje*/
-            console.log(anotherNewState);
-            setUserInput((prevState) => ({
-                ...prevState,
-                plantsFavourites: [...anotherNewState],
-            }));
+    */
+
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "UPDATE_VALUE":
+                return {
+                    ...state,
+                    [action.name]: { value: action.newValue },
+                };
+            case "UPDATE_FAV":
+                return {
+                    ...state,
+                    plantsFavourites: {
+                        ...state.plantsFavourites,
+                        [action.name]: action.newFav,
+                    },
+                };
+            case "UPDATE_RULES":
+                return {
+                    ...state,
+                    rules: {
+                        ...state.rules,
+                        [action.name]: action.newFav,
+                    },
+                };
+            default:
+                return state;
         }
     };
 
-    const handleChangeRules = (e) => {
-        const checked = e.target.checked;
-        const newValue = e.target.name;
-        if (checked && !userInput.rules.includes(newValue)) {
-            const newState = userInput.rules.push(newValue);
-            setUserInput((prevState) => ({
-                ...prevState,
-                rules: [...newState],
-            }));
-        } else if (!checked && userInput.rules.includes(newValue)) {
-            console.log("unchecked clicked");
-            const anotherNewState = userInput.rules.filter(
-                (rule) => rule !== newValue
-            );
-            /* problematyczna czesc, state sie nie updatuje*/
-            console.log(anotherNewState);
-            setUserInput((prevState) => ({
-                ...prevState,
-                rules: [...anotherNewState],
-            }));
-        }
+    const [userInput, dispatch] = useReducer(reducer, fields);
+
+    const handleChange = (dispatch) => {
+        /*const name = e.target.name;
+        const newValue = e.target.value;
+        setUserInput({ [name]: { value: newValue } });*/
     };
 
     const nextStep = () => {
@@ -115,10 +115,9 @@ const Survey = () => {
                     nextStep={nextStep}
                     prevStep={prevStep}
                     currentStep={currentStep}
+                    dispatch={dispatch}
+                    plantsState={userInput}
                     handleChange={handleChange}
-                    handleChangeCheckbox={handleChangeCheckbox}
-                    handleChangeRules={handleChangeRules}
-                    userInput={userInput}
                 />
                 <div className="ProgressBarContainer">
                     <SurveyProgressBar />
