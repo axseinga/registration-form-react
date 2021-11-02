@@ -19,7 +19,6 @@ const SurveyPage2 = (props) => {
                     dispatch={props.dispatch}
                     type="text"
                     action={"UPDATE_VALUE"}
-                    type="text"
                 >
                     And username:
                 </SurveyInput>

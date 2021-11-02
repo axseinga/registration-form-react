@@ -67,7 +67,7 @@ const SurveyContent = (props) => {
     };
 
     return (
-        <StyledSurveyContent>
+        <StyledSurveyContent isFirstPage={props.currentStep === 1}>
             {currentPage(props.currentStep)}
             <div>
                 {previousButton(props.prevStep)}

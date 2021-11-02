@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const justifyFlexend = css`
+    justify-content: flex-end;
+`;
 
 const StyledSurveyContent = styled.form`
     display: flex;
@@ -18,6 +22,8 @@ const StyledSurveyContent = styled.form`
         display: flex;
         justify-content: space-between;
         margin-bottom: 2rem;
+
+        ${(props) => props.isFirstPage && justifyFlexend}
     }
 `;
 
