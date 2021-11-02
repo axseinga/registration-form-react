@@ -10,7 +10,7 @@ const SurveyPage7 = (props) => {
                     Please check if you filled in all fields and hit submit
                     button.
                 </h2>
-                <Button type="submit" form="myForm">
+                <Button type="submit" handleClick={props.handleSubmit}>
                     Submit
                 </Button>
             </section>

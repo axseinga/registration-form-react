@@ -16,6 +16,7 @@ const SurveyContent = (props) => {
                 <SurveyPage1
                     dispatch={props.dispatch}
                     plantsState={props.plantsState}
+                    handleChange={props.handleChange}
                 ></SurveyPage1>
             );
         }
@@ -24,6 +25,7 @@ const SurveyContent = (props) => {
                 <SurveyPage2
                     dispatch={props.dispatch}
                     plantsState={props.plantsState}
+                    handleChange={props.handleChange}
                 ></SurveyPage2>
             );
         }
@@ -33,6 +35,7 @@ const SurveyContent = (props) => {
                 <SurveyPage3
                     dispatch={props.dispatch}
                     plantsState={props.plantsState}
+                    handleChange={props.handleChange}
                 ></SurveyPage3>
             );
         }
@@ -41,6 +44,7 @@ const SurveyContent = (props) => {
                 <SurveyPage4
                     dispatch={props.dispatch}
                     plantsState={props.plantsState}
+                    handleChange={props.handleChange}
                 ></SurveyPage4>
             );
         }
@@ -49,6 +53,7 @@ const SurveyContent = (props) => {
                 <SurveyPage5
                     dispatch={props.dispatch}
                     plantsState={props.plantsState}
+                    handleChange={props.handleChange}
                 ></SurveyPage5>
             );
         }
@@ -57,11 +62,14 @@ const SurveyContent = (props) => {
                 <SurveyPage6
                     dispatch={props.dispatch}
                     plantsState={props.plantsState}
+                    handleChange={props.handleChange}
                 ></SurveyPage6>
             );
         }
         if (currStep === 7) {
-            return <SurveyPage7></SurveyPage7>;
+            return (
+                <SurveyPage7 handleSubmit={props.handleSubmit}></SurveyPage7>
+            );
         }
     };
 

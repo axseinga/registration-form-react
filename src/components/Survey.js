@@ -3,17 +3,21 @@ import StyledSurvey from "./styled/Survey.styled";
 import SurveyTabs from "./SurveyTabs";
 import SurveyContent from "./SurveyContent";
 import SurveyProgressBar from "./SurveyProgressBar";
+import validate from "./FormValidation";
 
 const Survey = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const fields = {
-        name: { value: "" },
-        surname: { value: "" },
-        email: { value: "" },
-        username: { value: "" },
-        password: { value: "" },
+        name: { value: "", hasError: true, error: "", touched: false },
+        surname: { value: "", hasError: true, error: "", touched: false },
+        email: { value: "", hasError: true, error: "", touched: false },
+        username: { value: "", hasError: true, error: "", touched: false },
+        password: { value: "", hasError: true, error: "", touched: false },
         secondPassword: {
             value: "",
+            hasError: true,
+            error: "",
+            touched: false,
         },
         plantsAmount: "",
         plantsFavourites: {
@@ -45,7 +49,10 @@ const Survey = () => {
             case "UPDATE_VALUE":
                 return {
                     ...state,
-                    [action.name]: { value: action.newValue },
+                    [action.name]: {
+                        ...state[action.name],
+                        value: action.newValue,
+                    },
                 };
             case "UPDATE_AMOUNT":
                 return {
@@ -66,6 +73,15 @@ const Survey = () => {
                     rules: {
                         ...state.rules,
                         [action.name]: action.new,
+                    },
+                };
+            case "UPDATE_ERRORS":
+                return {
+                    ...state,
+                    [action.name]: {
+                        ...state[action.name],
+                        hasError: action.hasError,
+                        error: action.error,
                     },
                 };
             default:
@@ -91,6 +107,17 @@ const Survey = () => {
         setCurrentStep(step);
     };
 
+    const handleChange = (name, value, value2) => {
+        const { hasError, error } = validate(name, value, value2);
+        console.log(hasError, error);
+        dispatch({
+            type: "UPDATE_ERRORS",
+            name: name,
+            hasError: hasError,
+            error: error,
+        });
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("form submitted");
@@ -108,15 +135,13 @@ const Survey = () => {
                     currStep={currentStep}
                 />
                 <SurveyContent
-                    onSubmit={() => {
-                        console.log("submitting");
-                    }}
-                    id="myForm"
+                    handleSubmit={handleSubmit}
                     nextStep={nextStep}
                     prevStep={prevStep}
                     currentStep={currentStep}
                     dispatch={dispatch}
                     plantsState={userInput}
+                    handleChange={handleChange}
                 ></SurveyContent>
                 <div className="ProgressBarContainer">
                     <SurveyProgressBar />

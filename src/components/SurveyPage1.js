@@ -13,6 +13,7 @@ const SurveyPage1 = (props) => {
                     type="text"
                     action={"UPDATE_VALUE"}
                     value={state["name"].value}
+                    handleChange={props.handleChange}
                 >
                     Please tell us your name:
                 </SurveyInput>
@@ -22,6 +23,7 @@ const SurveyPage1 = (props) => {
                     type="text"
                     action={"UPDATE_VALUE"}
                     value={state["surname"].value}
+                    handleChange={props.handleChange}
                 >
                     And you surname:
                 </SurveyInput>

@@ -13,6 +13,7 @@ const SurveyPage3 = (props) => {
                     action={"UPDATE_VALUE"}
                     type="password"
                     value={state["password"].value}
+                    handleChange={props.handleChange}
                 >
                     Please choose your password:
                 </SurveyInput>
@@ -22,6 +23,7 @@ const SurveyPage3 = (props) => {
                     action={"UPDATE_VALUE"}
                     type="password"
                     value={state["secondPassword"].value}
+                    handleChange={props.handleChange}
                 >
                     Confirm your password:
                 </SurveyInput>
