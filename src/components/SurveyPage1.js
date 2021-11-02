@@ -3,6 +3,7 @@ import StyledSurveyPage from "./styled/SurveyPage.styled";
 import SurveyInput from "./SurveyInput";
 
 const SurveyPage1 = (props) => {
+    const state = props.plantsState;
     return (
         <StyledSurveyPage>
             <section>
@@ -11,6 +12,7 @@ const SurveyPage1 = (props) => {
                     dispatch={props.dispatch}
                     type="text"
                     action={"UPDATE_VALUE"}
+                    value={state["name"].value}
                 >
                     Please tell us your name:
                 </SurveyInput>
@@ -19,6 +21,7 @@ const SurveyPage1 = (props) => {
                     dispatch={props.dispatch}
                     type="text"
                     action={"UPDATE_VALUE"}
+                    value={state["surname"].value}
                 >
                     And you surname:
                 </SurveyInput>

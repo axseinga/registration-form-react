@@ -3,7 +3,7 @@ import StyledSurveyPage from "./styled/SurveyPage.styled";
 import SurveySwitch from "./SurveySwitch";
 
 const SurveyPage6 = (props) => {
-    const state = props.plantsFavState.rules;
+    const state = props.plantsState.rules;
     return (
         <StyledSurveyPage>
             <section className="page-six">

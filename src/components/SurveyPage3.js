@@ -3,6 +3,7 @@ import StyledSurveyPage from "./styled/SurveyPage.styled";
 import SurveyInput from "./SurveyInput";
 
 const SurveyPage3 = (props) => {
+    const state = props.plantsState;
     return (
         <StyledSurveyPage>
             <section>
@@ -11,6 +12,7 @@ const SurveyPage3 = (props) => {
                     dispatch={props.dispatch}
                     action={"UPDATE_VALUE"}
                     type="password"
+                    value={state["password"].value}
                 >
                     Please choose your password:
                 </SurveyInput>
@@ -19,6 +21,7 @@ const SurveyPage3 = (props) => {
                     dispatch={props.dispatch}
                     action={"UPDATE_VALUE"}
                     type="password"
+                    value={state["secondPassword"].value}
                 >
                     Confirm your password:
                 </SurveyInput>

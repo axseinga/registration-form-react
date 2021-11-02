@@ -12,20 +12,35 @@ import Button from "./Button";
 const SurveyContent = (props) => {
     const currentPage = (currStep) => {
         if (currStep === 1) {
-            return <SurveyPage1 dispatch={props.dispatch}></SurveyPage1>;
+            return (
+                <SurveyPage1
+                    dispatch={props.dispatch}
+                    plantsState={props.plantsState}
+                ></SurveyPage1>
+            );
         }
         if (currStep === 2) {
-            return <SurveyPage2 dispatch={props.dispatch}></SurveyPage2>;
+            return (
+                <SurveyPage2
+                    dispatch={props.dispatch}
+                    plantsState={props.plantsState}
+                ></SurveyPage2>
+            );
         }
 
         if (currStep === 3) {
-            return <SurveyPage3 dispatch={props.dispatch}></SurveyPage3>;
+            return (
+                <SurveyPage3
+                    dispatch={props.dispatch}
+                    plantsState={props.plantsState}
+                ></SurveyPage3>
+            );
         }
         if (currStep === 4) {
             return (
                 <SurveyPage4
                     dispatch={props.dispatch}
-                    plantsFavState={props.plantsState}
+                    plantsState={props.plantsState}
                 ></SurveyPage4>
             );
         }
@@ -33,7 +48,7 @@ const SurveyContent = (props) => {
             return (
                 <SurveyPage5
                     dispatch={props.dispatch}
-                    plantsFavState={props.plantsState}
+                    plantsState={props.plantsState}
                 ></SurveyPage5>
             );
         }
@@ -41,7 +56,7 @@ const SurveyContent = (props) => {
             return (
                 <SurveyPage6
                     dispatch={props.dispatch}
-                    plantsFavState={props.plantsState}
+                    plantsState={props.plantsState}
                 ></SurveyPage6>
             );
         }
