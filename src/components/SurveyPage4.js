@@ -15,7 +15,8 @@ const SurveyPage4 = (props) => {
                     isradio={true}
                     dispatch={props.dispatch}
                     action={"UPDATE_AMOUNT"}
-                    isChecked={state === "a"}
+                    isChecked={state.value === "a"}
+                    handleChange={props.handleChange}
                 >
                     0 - 20
                 </SurveyInput>
@@ -26,7 +27,8 @@ const SurveyPage4 = (props) => {
                     isradio={true}
                     dispatch={props.dispatch}
                     action={"UPDATE_AMOUNT"}
-                    isChecked={state === "b"}
+                    isChecked={state.value === "b"}
+                    handleChange={props.handleChange}
                 >
                     21 - 40
                 </SurveyInput>
@@ -37,7 +39,8 @@ const SurveyPage4 = (props) => {
                     isradio={true}
                     dispatch={props.dispatch}
                     action={"UPDATE_AMOUNT"}
-                    isChecked={state === "c"}
+                    isChecked={state.value === "c"}
+                    handleChange={props.handleChange}
                 >
                     41 - 60
                 </SurveyInput>
@@ -48,7 +51,8 @@ const SurveyPage4 = (props) => {
                     isradio={true}
                     dispatch={props.dispatch}
                     action={"UPDATE_AMOUNT"}
-                    isChecked={state === "d"}
+                    isChecked={state.value === "d"}
+                    handleChange={props.handleChange}
                 >
                     61 or more
                 </SurveyInput>

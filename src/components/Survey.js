@@ -19,7 +19,7 @@ const Survey = () => {
             error: "",
             touched: false,
         },
-        plantsAmount: "",
+        plantsAmount: { value: "", hasError: true, error: "", touched: false },
         plantsFavourites: {
             cacti: false,
             aroids: false,
@@ -29,8 +29,17 @@ const Survey = () => {
             palms: false,
             ferns: false,
             orchids: false,
+            hasError: false,
         },
-        rules: { rule1: false, rule2: false, rule3: false, rule4: false },
+        rules: {
+            rule1: false,
+            rule2: false,
+            rule3: false,
+            rule4: false,
+            hasError: true,
+            error: "",
+            touched: false,
+        },
         isFormValid: false,
     };
 
@@ -57,7 +66,10 @@ const Survey = () => {
             case "UPDATE_AMOUNT":
                 return {
                     ...state,
-                    plantsAmount: action.name,
+                    plantsAmount: {
+                        ...state.plantsAmount,
+                        value: action.name,
+                    },
                 };
             case "UPDATE_FAV":
                 return {
@@ -109,7 +121,6 @@ const Survey = () => {
 
     const handleChange = (name, value, value2) => {
         const { hasError, error } = validate(name, value, value2);
-        console.log(hasError, error);
         dispatch({
             type: "UPDATE_ERRORS",
             name: name,

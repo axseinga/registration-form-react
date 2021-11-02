@@ -2,7 +2,6 @@ import React from "react";
 import StyledSurveyInput from "./styled/SurveyInput.styled";
 
 const SurveyInput = (props) => {
-    console.log(props.value);
     return (
         <StyledSurveyInput
             isradio={props.isradio}
@@ -22,7 +21,7 @@ const SurveyInput = (props) => {
                         newValue: e.target.value,
                         newFav: !props.isChecked,
                     });
-                    props.handleChange(props.name, e.target.value);
+                    props.handleChange(props.name, e.target.value, props.value);
                 }}
                 checked={props.isChecked}
             ></input>

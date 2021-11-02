@@ -16,6 +16,8 @@ const SurveyPage6 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_RULES"}
                         isChecked={state["rule1"]}
+                        state={state}
+                        handleChange={props.handleChange}
                     ></SurveySwitch>
                 </div>
                 <div>
@@ -27,6 +29,8 @@ const SurveyPage6 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_RULES"}
                         isChecked={state["rule2"]}
+                        state={state}
+                        handleChange={props.handleChange}
                     ></SurveySwitch>
                 </div>
                 <div>
@@ -38,6 +42,8 @@ const SurveyPage6 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_RULES"}
                         isChecked={state["rule3"]}
+                        state={state}
+                        handleChange={props.handleChange}
                     ></SurveySwitch>
                 </div>
                 <div>
@@ -50,6 +56,8 @@ const SurveyPage6 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_RULES"}
                         isChecked={state["rule4"]}
+                        state={state}
+                        handleChange={props.handleChange}
                     ></SurveySwitch>
                 </div>
             </section>

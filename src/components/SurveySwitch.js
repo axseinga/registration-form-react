@@ -9,14 +9,15 @@ const SurveySwitch = (props) => {
                 name={props.name}
                 id={props.name}
                 value={props.value}
-                onChange={(e) =>
+                onChange={(e) => {
                     props.dispatch({
                         type: props.action,
                         name: props.name,
                         newValue: e.target.value,
                         new: !props.isChecked,
-                    })
-                }
+                    });
+                    props.handleChange("rules", !props.isChecked);
+                }}
                 checked={props.isChecked}
             ></input>
             <label htmlFor={props.name}>{props.children} </label>

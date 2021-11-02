@@ -20,6 +20,7 @@ const SurveyPage5 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["cacti"]}
+                        handleChange={props.handleChange}
                     >
                         Cacti & succulents
                     </SurveyInput>
@@ -31,6 +32,7 @@ const SurveyPage5 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["aroids"]}
+                        handleChange={props.handleChange}
                     >
                         Monsteras & aroids
                     </SurveyInput>
@@ -42,6 +44,7 @@ const SurveyPage5 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["marantas"]}
+                        handleChange={props.handleChange}
                     >
                         Marantas & Calatheas
                     </SurveyInput>
@@ -53,6 +56,7 @@ const SurveyPage5 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["begonias"]}
+                        handleChange={props.handleChange}
                     >
                         Begonias
                     </SurveyInput>
@@ -64,6 +68,7 @@ const SurveyPage5 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["alocasias"]}
+                        handleChange={props.handleChange}
                     >
                         Alocasias
                     </SurveyInput>
@@ -75,6 +80,7 @@ const SurveyPage5 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["palms"]}
+                        handleChange={props.handleChange}
                     >
                         Palms & arecas
                     </SurveyInput>
@@ -86,6 +92,7 @@ const SurveyPage5 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["ferns"]}
+                        handleChange={props.handleChange}
                     >
                         Ferns
                     </SurveyInput>
@@ -97,6 +104,7 @@ const SurveyPage5 = (props) => {
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["orchids"]}
+                        handleChange={props.handleChange}
                     >
                         Orchids
                     </SurveyInput>
