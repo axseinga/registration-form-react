@@ -108,13 +108,16 @@ const Survey = () => {
                     currStep={currentStep}
                 />
                 <SurveyContent
-                    onSubmit={handleSubmit}
+                    onSubmit={() => {
+                        console.log("submitting");
+                    }}
+                    id="myForm"
                     nextStep={nextStep}
                     prevStep={prevStep}
                     currentStep={currentStep}
                     dispatch={dispatch}
                     plantsState={userInput}
-                />
+                ></SurveyContent>
                 <div className="ProgressBarContainer">
                     <SurveyProgressBar />
                 </div>
