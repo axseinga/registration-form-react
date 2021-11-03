@@ -116,7 +116,10 @@ const SurveyContent = (props) => {
     };
 
     return (
-        <StyledSurveyContent isFirstPage={props.currentStep === 1}>
+        <StyledSurveyContent
+            onSubmit={() => console.log("submit handled")}
+            isFirstPage={props.currentStep === 1}
+        >
             {currentPage(props.currentStep)}
             <div>
                 {previousButton(props.prevStep)}

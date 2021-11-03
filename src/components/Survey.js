@@ -170,7 +170,6 @@ const Survey = () => {
                     currStep={currentStep}
                 />
                 <SurveyContent
-                    onSubmit={() => console.log("submit handled")}
                     nextStep={nextStep}
                     prevStep={prevStep}
                     currentStep={currentStep}
