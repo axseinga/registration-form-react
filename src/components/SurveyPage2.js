@@ -4,33 +4,29 @@ import SurveyInput from "./SurveyInput";
 
 const SurveyPage2 = (props) => {
     const state = props.plantsState;
+    const inputs = [
+        { name: "email", label: "Please fill in your e-mail address:" },
+        { name: "username", label: "And username:" },
+    ];
+    const action = "UPDATE_VALUE";
     return (
         <StyledSurveyPage>
             <section>
-                <SurveyInput
-                    name={"email"}
-                    dispatch={props.dispatch}
-                    action={"UPDATE_VALUE"}
-                    type="text"
-                    value={state["email"].value}
-                    handleChange={props.handleChange}
-                    onFocusOut={props.onFocusOut}
-                    state={state}
-                >
-                    Please fill in your e-mail address:
-                </SurveyInput>
-                <SurveyInput
-                    name={"username"}
-                    dispatch={props.dispatch}
-                    type="text"
-                    action={"UPDATE_VALUE"}
-                    value={state["username"].value}
-                    handleChange={props.handleChange}
-                    onFocusOut={props.onFocusOut}
-                    state={state}
-                >
-                    And username:
-                </SurveyInput>
+                {inputs.map((input) => (
+                    <SurveyInput
+                        key={input.name}
+                        name={input.name}
+                        dispatch={props.dispatch}
+                        type="text"
+                        action={action}
+                        value={state[input.name].value}
+                        handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        state={state}
+                    >
+                        {input.label}
+                    </SurveyInput>
+                ))}
             </section>
             <div>r</div>
         </StyledSurveyPage>

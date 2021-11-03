@@ -4,62 +4,44 @@ import SurveySwitch from "./SurveySwitch";
 
 const SurveyPage6 = (props) => {
     const state = props.plantsState.rules;
+    const inputs = [
+        {
+            name: "rule1",
+            rule: "I will not post “offensive” posts, links or images",
+        },
+        {
+            name: "rule2",
+            rule: "I will remain respectful of other members at all times",
+        },
+        {
+            name: "rule3",
+            rule: "I will not spam, advertise or self-promote in the forums",
+        },
+        {
+            name: "rule4",
+            rule: "Before starting a new thread I will search the forum for similar topics.",
+        },
+    ];
+    const action = "UPDATE_RULES";
+    const type = "checkbox";
     return (
         <StyledSurveyPage>
             <section className="page-six">
-                <div>
-                    <p>I will not post “offensive” posts, links or images</p>
-                    <SurveySwitch
-                        name="rule1"
-                        type="checkbox"
-                        value="rule1"
-                        dispatch={props.dispatch}
-                        action={"UPDATE_RULES"}
-                        isChecked={state["rule1"]}
-                        state={state}
-                        handleChange={props.handleChange}
-                    ></SurveySwitch>
-                </div>
-                <div>
-                    I will remain respectful of other members at all times
-                    <SurveySwitch
-                        name="rule2"
-                        type="checkbox"
-                        value="rule2"
-                        dispatch={props.dispatch}
-                        action={"UPDATE_RULES"}
-                        isChecked={state["rule2"]}
-                        state={state}
-                        handleChange={props.handleChange}
-                    ></SurveySwitch>
-                </div>
-                <div>
-                    I will not spam, advertise or self-promote in the forums
-                    <SurveySwitch
-                        name="rule3"
-                        type="checkbox"
-                        value="rule3"
-                        dispatch={props.dispatch}
-                        action={"UPDATE_RULES"}
-                        isChecked={state["rule3"]}
-                        state={state}
-                        handleChange={props.handleChange}
-                    ></SurveySwitch>
-                </div>
-                <div>
-                    Before starting a new thread I will search the forum for
-                    similar topics.
-                    <SurveySwitch
-                        name="rule4"
-                        type="checkbox"
-                        value="rule4"
-                        dispatch={props.dispatch}
-                        action={"UPDATE_RULES"}
-                        isChecked={state["rule4"]}
-                        state={state}
-                        handleChange={props.handleChange}
-                    ></SurveySwitch>
-                </div>
+                {inputs.map((input) => (
+                    <div key={input.name}>
+                        <p>{input.rule}</p>
+                        <SurveySwitch
+                            name={input.name}
+                            type={type}
+                            value={input.name}
+                            dispatch={props.dispatch}
+                            action={action}
+                            isChecked={state[input.name]}
+                            state={state}
+                            handleChange={props.handleChange}
+                        ></SurveySwitch>
+                    </div>
+                ))}
             </section>
             <div>A</div>
         </StyledSurveyPage>
