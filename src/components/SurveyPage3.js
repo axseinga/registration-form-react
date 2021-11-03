@@ -14,6 +14,8 @@ const SurveyPage3 = (props) => {
                     type="password"
                     value={state["password"].value}
                     handleChange={props.handleChange}
+                    onFocusOut={props.onFocusOut}
+                    state={state}
                 >
                     Please choose your password:
                 </SurveyInput>
@@ -24,6 +26,8 @@ const SurveyPage3 = (props) => {
                     type="password"
                     value={state["secondPassword"].value}
                     handleChange={props.handleChange}
+                    onFocusOut={props.onFocusOut}
+                    state={state}
                 >
                     Confirm your password:
                 </SurveyInput>

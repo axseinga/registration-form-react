@@ -23,8 +23,13 @@ const SurveyInput = (props) => {
                     });
                     props.handleChange(props.name, e.target.value, props.value);
                 }}
+                onBlur={() => props.onFocusOut(props.name, true)}
                 checked={props.isChecked}
             ></input>
+            {props.state[props.name].touched &&
+                props.state[props.name].hasError && (
+                    <span>{props.state[props.name].error}</span>
+                )}
         </StyledSurveyInput>
     );
 };

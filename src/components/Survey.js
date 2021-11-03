@@ -96,6 +96,14 @@ const Survey = () => {
                         error: action.error,
                     },
                 };
+            case "UPDATE_TOUCHED":
+                return {
+                    ...state,
+                    [action.name]: {
+                        ...state[action.name],
+                        touched: action.touched,
+                    },
+                };
             default:
                 return state;
         }
@@ -129,6 +137,15 @@ const Survey = () => {
         });
     };
 
+    const onFocusOut = (name, touched) => {
+        console.log(name, touched);
+        dispatch({
+            type: "UPDATE_TOUCHED",
+            name: name,
+            touched: touched,
+        });
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("form submitted");
@@ -153,6 +170,7 @@ const Survey = () => {
                     dispatch={dispatch}
                     plantsState={userInput}
                     handleChange={handleChange}
+                    onFocusOut={onFocusOut}
                 ></SurveyContent>
                 <div className="ProgressBarContainer">
                     <SurveyProgressBar />

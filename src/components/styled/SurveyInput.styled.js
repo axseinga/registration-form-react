@@ -120,6 +120,11 @@ const StyledSurveyInput = styled.div`
         }
     }
 
+    & span {
+        color: red;
+        grid-column: 1 / 3;
+    }
+
     ${(props) => props.isradio && radioInputStyle}
     ${(props) => props.ischeckbox && checkboxInputStyle}
 `;
