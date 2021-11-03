@@ -11,6 +11,30 @@ import Button from "./Button";
 
 const SurveyContent = (props) => {
     const currentPage = (currStep) => {
+        /*const Components = [
+            SurveyPage1,
+            SurveyPage2,
+            SurveyPage3,
+            SurveyPage4,
+            SurveyPage5,
+            SurveyPage6,
+            SurveyPage7,
+        ];
+        const pages = [1, 2, 3, 4, 5, 6, 7];
+        pages.map((page) => {
+            if (currStep === page) {
+                const ComponentName = Components[currStep - 1];
+                return (
+                    <ComponentName
+                        dispatch={props.dispatch}
+                        plantsState={props.plantsState}
+                        handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        handleSubmit={props.handleSubmit}
+                    />
+                );
+            } else return;
+        });*/
         if (currStep === 1) {
             return (
                 <SurveyPage1

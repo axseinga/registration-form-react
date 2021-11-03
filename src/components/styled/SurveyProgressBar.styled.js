@@ -1,4 +1,46 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const percent20 = css`
+    & div {
+        width: 20%;
+    }
+`;
+
+const percent40 = css`
+    & div {
+        width: 40%;
+    }
+`;
+
+const percent60 = css`
+    & div {
+        width: 60%;
+    }
+`;
+
+const percent70 = css`
+    & div {
+        width: 70%;
+    }
+`;
+
+const percent80 = css`
+    & div {
+        width: 80%;
+    }
+`;
+
+const percent90 = css`
+    & div {
+        width: 90%;
+    }
+`;
+
+const percent100 = css`
+    & div {
+        width: 100%;
+    }
+`;
 
 const StyledSurveyProgressBar = styled.div`
     box-sizing: content-box;
@@ -13,7 +55,7 @@ const StyledSurveyProgressBar = styled.div`
 
     & div {
         display: block;
-        width: 60%;
+        width: 0%;
         height: 100%;
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
@@ -66,6 +108,14 @@ const StyledSurveyProgressBar = styled.div`
             background-position: 50px 50px;
         }
     }
+
+    ${(props) => props.percent === 2 && percent20}
+    ${(props) => props.percent === 4 && percent40}
+    ${(props) => props.percent === 6 && percent60}
+    ${(props) => props.percent === 7 && percent70}
+    ${(props) => props.percent === 8 && percent80}
+    ${(props) => props.percent === 9 && percent90}
+    ${(props) => props.percent === 10 && percent100}
 `;
 
 export default StyledSurveyProgressBar;

@@ -180,7 +180,7 @@ const Survey = () => {
                     onFocusOut={onFocusOut}
                 ></SurveyContent>
                 <div className="ProgressBarContainer">
-                    <SurveyProgressBar />
+                    <SurveyProgressBar currStep={currentStep} />
                 </div>
             </section>
         </StyledSurvey>
