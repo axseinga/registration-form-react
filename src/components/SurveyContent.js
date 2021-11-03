@@ -30,7 +30,6 @@ const SurveyContent = (props) => {
                         plantsState={props.plantsState}
                         handleChange={props.handleChange}
                         onFocusOut={props.onFocusOut}
-                        handleSubmit={props.handleSubmit}
                     />
                 );
             } else return;
@@ -96,9 +95,7 @@ const SurveyContent = (props) => {
             );
         }
         if (currStep === 7) {
-            return (
-                <SurveyPage7 handleSubmit={props.handleSubmit}></SurveyPage7>
-            );
+            return <SurveyPage7></SurveyPage7>;
         }
     };
 
