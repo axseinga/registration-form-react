@@ -97,6 +97,36 @@ export default function validate(name, value, value2) {
             }
             break;
         }
+        case "plantsAmount": {
+            if (value2.touched === false) {
+                hasError = true;
+                error = "Please mark one of the options";
+            } else {
+                hasError = false;
+                error = "";
+            }
+            break;
+        }
+        case "plantsFavourites": {
+            if (value2.touched === false) {
+                hasError = true;
+                error = "Please mark one of the options";
+            } else {
+                hasError = false;
+                error = "";
+            }
+            break;
+        }
+        case "rules": {
+            if (value2 === false) {
+                hasError = true;
+                error = "Please accept this rule";
+            } else {
+                hasError = false;
+                error = "";
+            }
+            break;
+        }
         default:
             break;
     }

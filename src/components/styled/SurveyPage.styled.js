@@ -14,6 +14,10 @@ const StyledSurveyPage = styled.div`
         width: 60%;
     }
 
+    & section > span {
+        color: red;
+    }
+
     & section > div {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

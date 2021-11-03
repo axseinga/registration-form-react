@@ -1,6 +1,6 @@
 import React from "react";
 import StyledSurveyPage from "./styled/SurveyPage.styled";
-import SurveyInput from "./SurveyInput";
+import SurveyInputChecks from "./SurveyInputChecks";
 
 const SurveyPage5 = (props) => {
     const state = props.plantsState.plantsFavourites;
@@ -12,103 +12,128 @@ const SurveyPage5 = (props) => {
                     <span>(mark as many as you want!)</span>
                 </h2>
                 <div>
-                    <SurveyInput
+                    <SurveyInputChecks
                         name={"cacti"}
                         type="checkbox"
                         value={"cacti"}
+                        field={"plantsFavourites"}
                         ischeckbox={true}
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["cacti"]}
                         handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        state={state}
                     >
                         Cacti & succulents
-                    </SurveyInput>
-                    <SurveyInput
+                    </SurveyInputChecks>
+                    <SurveyInputChecks
                         name={"aroids"}
                         type="checkbox"
                         value={"aroids"}
+                        field={"plantsFavourites"}
                         ischeckbox={true}
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["aroids"]}
                         handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        state={state}
                     >
                         Monsteras & aroids
-                    </SurveyInput>
-                    <SurveyInput
+                    </SurveyInputChecks>
+                    <SurveyInputChecks
                         name={"marantas"}
                         type="checkbox"
                         value={"marantas"}
+                        field={"plantsFavourites"}
                         ischeckbox={true}
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["marantas"]}
                         handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        state={state}
                     >
                         Marantas & Calatheas
-                    </SurveyInput>
-                    <SurveyInput
+                    </SurveyInputChecks>
+                    <SurveyInputChecks
                         name={"begonias"}
                         type="checkbox"
                         value={"begonias"}
+                        field={"plantsFavourites"}
                         ischeckbox={true}
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["begonias"]}
                         handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        state={state}
                     >
                         Begonias
-                    </SurveyInput>
-                    <SurveyInput
+                    </SurveyInputChecks>
+                    <SurveyInputChecks
                         name={"alocasias"}
                         type="checkbox"
                         value={"alocasias"}
+                        field={"plantsFavourites"}
                         ischeckbox={true}
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["alocasias"]}
                         handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        state={state}
                     >
                         Alocasias
-                    </SurveyInput>
-                    <SurveyInput
+                    </SurveyInputChecks>
+                    <SurveyInputChecks
                         name={"palms"}
                         type="checkbox"
                         value={"palms"}
+                        field={"plantsFavourites"}
                         ischeckbox={true}
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["palms"]}
                         handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        state={state}
                     >
                         Palms & arecas
-                    </SurveyInput>
-                    <SurveyInput
+                    </SurveyInputChecks>
+                    <SurveyInputChecks
                         name={"ferns"}
                         type="checkbox"
                         value={"ferns"}
+                        field={"plantsFavourites"}
                         ischeckbox={true}
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["ferns"]}
                         handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        state={state}
                     >
                         Ferns
-                    </SurveyInput>
-                    <SurveyInput
+                    </SurveyInputChecks>
+                    <SurveyInputChecks
                         name={"orchids"}
                         type="checkbox"
                         value={"orchids"}
+                        field={"plantsFavourites"}
                         ischeckbox={true}
                         dispatch={props.dispatch}
                         action={"UPDATE_FAV"}
                         isChecked={state["orchids"]}
                         handleChange={props.handleChange}
+                        onFocusOut={props.onFocusOut}
+                        state={state}
                     >
                         Orchids
-                    </SurveyInput>
+                    </SurveyInputChecks>
                 </div>
+                {state.touched && state.hasError && <span>{state.error}</span>}
             </section>
             <div>q</div>
         </StyledSurveyPage>

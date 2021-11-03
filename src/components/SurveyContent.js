@@ -48,6 +48,7 @@ const SurveyContent = (props) => {
                     dispatch={props.dispatch}
                     plantsState={props.plantsState}
                     handleChange={props.handleChange}
+                    onFocusOut={props.onFocusOut}
                 ></SurveyPage4>
             );
         }
@@ -57,6 +58,7 @@ const SurveyContent = (props) => {
                     dispatch={props.dispatch}
                     plantsState={props.plantsState}
                     handleChange={props.handleChange}
+                    onFocusOut={props.onFocusOut}
                 ></SurveyPage5>
             );
         }

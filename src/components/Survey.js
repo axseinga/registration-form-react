@@ -19,7 +19,12 @@ const Survey = () => {
             error: "",
             touched: false,
         },
-        plantsAmount: { value: "", hasError: true, error: "", touched: false },
+        plantsAmount: {
+            value: "",
+            hasError: true,
+            error: "Please mark one of the options",
+            touched: false,
+        },
         plantsFavourites: {
             cacti: false,
             aroids: false,
@@ -29,7 +34,9 @@ const Survey = () => {
             palms: false,
             ferns: false,
             orchids: false,
-            hasError: false,
+            hasError: true,
+            error: "Please mark one of the options",
+            touched: false,
         },
         rules: {
             rule1: false,
@@ -37,7 +44,7 @@ const Survey = () => {
             rule3: false,
             rule4: false,
             hasError: true,
-            error: "",
+            error: "Please accept this rule",
             touched: false,
         },
         isFormValid: false,
@@ -68,7 +75,7 @@ const Survey = () => {
                     ...state,
                     plantsAmount: {
                         ...state.plantsAmount,
-                        value: action.name,
+                        value: action.newValue,
                     },
                 };
             case "UPDATE_FAV":
@@ -129,6 +136,7 @@ const Survey = () => {
 
     const handleChange = (name, value, value2) => {
         const { hasError, error } = validate(name, value, value2);
+        console.log(name, value, value2);
         dispatch({
             type: "UPDATE_ERRORS",
             name: name,
@@ -138,7 +146,6 @@ const Survey = () => {
     };
 
     const onFocusOut = (name, touched) => {
-        console.log(name, touched);
         dispatch({
             type: "UPDATE_TOUCHED",
             name: name,
