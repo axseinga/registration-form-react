@@ -24,6 +24,7 @@ const SurveyPage6 = (props) => {
     ];
     const action = "UPDATE_RULES";
     const type = "checkbox";
+    const field = "rules";
     return (
         <StyledSurveyPage>
             <section className="page-six">
@@ -33,15 +34,18 @@ const SurveyPage6 = (props) => {
                         <SurveySwitch
                             name={input.name}
                             type={type}
+                            field={field}
                             value={input.name}
                             dispatch={props.dispatch}
                             action={action}
                             isChecked={state[input.name]}
                             state={state}
                             handleChange={props.handleChange}
+                            onFocusOut={props.onFocusOut}
                         ></SurveySwitch>
                     </div>
                 ))}
+                {state.touched && state.hasError && <span>{state.error}</span>}
             </section>
             <div>A</div>
         </StyledSurveyPage>

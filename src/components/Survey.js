@@ -44,21 +44,11 @@ const Survey = () => {
             rule3: false,
             rule4: false,
             hasError: true,
-            error: "Please accept this rule",
+            error: "Please accept all the rules",
             touched: false,
         },
         isFormValid: false,
     };
-
-    /* 
-
-    {
-    type: 'UPDATE_iSTOUCHED',
-    type: 'UPDATE_HASERROR',
-    type: 'UPDATE_ERROR',
-}
-
-    */
 
     const reducer = (state, action) => {
         switch (action.type) {
@@ -136,7 +126,6 @@ const Survey = () => {
 
     const handleChange = (name, value, value2) => {
         const { hasError, error } = validate(name, value, value2);
-        console.log(name, value, value2);
         dispatch({
             type: "UPDATE_ERRORS",
             name: name,

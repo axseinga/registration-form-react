@@ -98,17 +98,22 @@ export default function validate(name, value, value2) {
             break;
         }
         case "plantsAmount": {
-            if (value2.touched === false) {
-                hasError = true;
-                error = "Please mark one of the options";
-            } else {
-                hasError = false;
-                error = "";
-            }
+            hasError = false;
+            error = "";
             break;
         }
         case "plantsFavourites": {
-            if (value2.touched === false) {
+            console.log(value2);
+            if (
+                value2.cacti !== false ||
+                value2.alocasias !== false ||
+                value2.aroids !== false ||
+                value2.begonias !== false ||
+                value2.ferns !== false ||
+                value2.marantas !== false ||
+                value2.orchids !== false ||
+                value2.palms !== false
+            ) {
                 hasError = true;
                 error = "Please mark one of the options";
             } else {
@@ -118,9 +123,14 @@ export default function validate(name, value, value2) {
             break;
         }
         case "rules": {
-            if (value2 === false) {
+            if (
+                value.rule1 === false ||
+                value2.rule2 === false ||
+                value2.rule3 === false ||
+                value2.rule4 === false
+            ) {
                 hasError = true;
-                error = "Please accept this rule";
+                error = "Please accept all the rules";
             } else {
                 hasError = false;
                 error = "";
