@@ -7,16 +7,27 @@ import validate from "./FormValidation";
 
 const Survey = () => {
     const [currentStep, setCurrentStep] = useState(1);
+    const errorMsg = "Please fill in this field";
     const fields = {
-        name: { value: "", hasError: true, error: "", touched: false },
-        surname: { value: "", hasError: true, error: "", touched: false },
-        email: { value: "", hasError: true, error: "", touched: false },
-        username: { value: "", hasError: true, error: "", touched: false },
-        password: { value: "", hasError: true, error: "", touched: false },
+        name: { value: "", hasError: true, error: errorMsg, touched: false },
+        surname: { value: "", hasError: true, error: errorMsg, touched: false },
+        email: { value: "", hasError: true, error: errorMsg, touched: false },
+        username: {
+            value: "",
+            hasError: true,
+            error: errorMsg,
+            touched: false,
+        },
+        password: {
+            value: "",
+            hasError: true,
+            error: errorMsg,
+            touched: false,
+        },
         secondPassword: {
             value: "",
             hasError: true,
-            error: "",
+            error: errorMsg,
             touched: false,
         },
         plantsAmount: {
@@ -47,7 +58,6 @@ const Survey = () => {
             error: "Please accept all the rules",
             touched: false,
         },
-        isFormValid: false,
     };
 
     const reducer = (state, action) => {
@@ -101,6 +111,8 @@ const Survey = () => {
                         touched: action.touched,
                     },
                 };
+            case "RESET":
+                return fields;
             default:
                 return state;
         }
@@ -144,7 +156,32 @@ const Survey = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("form submitted");
+        const errors = [];
+        Object.entries(userInput).forEach(([key, value]) => {
+            if (value.hasError === true) {
+                errors.push(value.error);
+                dispatch({
+                    type: "UPDATE_TOUCHED",
+                    name: key,
+                    touched: true,
+                });
+            }
+        });
+        if (errors !== []) {
+            console.log("form has errors");
+        } else {
+            alert(
+                `Thank you for your registration. The email was sent to ${userInput.email.value}`
+            );
+            setTimeout(() => {
+                dispatch(
+                    {
+                        type: "UPDATE_ERRORS",
+                    },
+                    1000
+                );
+            });
+        }
     };
 
     return (
