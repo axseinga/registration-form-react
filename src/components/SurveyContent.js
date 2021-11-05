@@ -117,7 +117,7 @@ const SurveyContent = (props) => {
 
     return (
         <StyledSurveyContent
-            onSubmit={() => console.log("submit handled")}
+            onSubmit={props.handleSubmit}
             isFirstPage={props.currentStep === 1}
         >
             {currentPage(props.currentStep)}

@@ -1,6 +1,6 @@
 import React from "react";
 import StyledSurveyPage from "./styled/SurveyPage.styled";
-import Button from "./Button";
+import ButtonSubmit from "./ButtonSubmit";
 
 const SurveyPage7 = (props) => {
     return (
@@ -10,9 +10,7 @@ const SurveyPage7 = (props) => {
                     Please check if you filled in all fields and hit submit
                     button.
                 </h2>
-                <Button type="submit">
-                    Submit
-                </Button>
+                <ButtonSubmit type="submit">Submit</ButtonSubmit>
             </section>
             <div>D</div>
         </StyledSurveyPage>
