@@ -6,42 +6,6 @@ const percent = css`
     }
 `;
 
-const percent40 = css`
-    & div {
-        width: 40%;
-    }
-`;
-
-const percent60 = css`
-    & div {
-        width: 60%;
-    }
-`;
-
-const percent70 = css`
-    & div {
-        width: 70%;
-    }
-`;
-
-const percent80 = css`
-    & div {
-        width: 80%;
-    }
-`;
-
-const percent90 = css`
-    & div {
-        width: 90%;
-    }
-`;
-
-const percent100 = css`
-    & div {
-        width: 100%;
-    }
-`;
-
 const StyledSurveyProgressBar = styled.div`
     box-sizing: content-box;
     width: 80%;

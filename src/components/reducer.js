@@ -1,4 +1,83 @@
-const errorMsg = "Please fill in this field";
+const initFields = () => {
+    const basicFields = [
+        "name",
+        "surname",
+        "email",
+        "username",
+        "password",
+        "secondPassword",
+    ];
+    const data = {};
+    basicFields.forEach((name) => {
+        data[name] = {
+            value: "",
+            hasError: true,
+            error: "Please fill in this field",
+            touched: false,
+        };
+    });
+    const extraFields = ["plantsAmount", "plantsFavourites", "rules"];
+    extraFields.forEach((name) => {
+        data[name] = {
+            hasError: true,
+            touched: false,
+            error: "Please mark one of the options",
+        };
+    });
+    data.plantsAmount.value = "";
+    const plants = [
+        "cacti",
+        "aroids",
+        "marantas",
+        "begonias",
+        "alocasias",
+        "palms",
+        "ferns",
+        "orchids",
+    ];
+    plants.forEach((plant) => {
+        data.plantsFavourites[plant] = false;
+    });
+    const rules = ["rule1", "rule2", "rule3", "rule4"];
+    rules.forEach((rule) => {
+        data.rules[rule] = false;
+    });
+    data.rules.error = "Please accept all the rules";
+    /*
+    data.plantsAmount = {
+        value: "",
+        hasError: true,
+        error: "Please mark one of the options",
+        touched: false,
+    };
+    data.plantsFavourites = {
+        cacti: false,
+        aroids: false,
+        marantas: false,
+        begonias: false,
+        alocasias: false,
+        palms: false,
+        ferns: false,
+        orchids: false,
+        hasError: true,
+        error: "Please mark one of the options",
+        touched: false,
+    };
+    data.rules = {
+        rule1: false,
+        rule2: false,
+        rule3: false,
+        rule4: false,
+        hasError: true,
+        error: "Please accept all the rules",
+        touched: false,
+    };*/
+    return data;
+};
+
+export const fields = initFields();
+
+/*const errorMsg = "Please fill in this field";
 export const fields = {
     name: { value: "", hasError: true, error: errorMsg, touched: false },
     surname: { value: "", hasError: true, error: errorMsg, touched: false },
@@ -49,7 +128,7 @@ export const fields = {
         error: "Please accept all the rules",
         touched: false,
     },
-};
+};*/
 
 export const reducer = (state, action) => {
     switch (action.type) {
