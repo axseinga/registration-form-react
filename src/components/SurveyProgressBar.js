@@ -2,7 +2,7 @@ import React from "react";
 import StyledSurveyProgressBar from "./styled/SurveyProgressBar.styled";
 
 const SurveyProgressBar = (props) => {
-    const percents = [2, 4, 6, 7, 8, 9, 10];
+    const percents = [20, 40, 60, 70, 80, 90, 100];
 
     const percent = () => {
         const current = percents[props.currStep - 1];

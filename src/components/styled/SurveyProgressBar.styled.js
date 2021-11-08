@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 
-const percent20 = css`
+const percent = css`
     & div {
-        width: 20%;
+        width: ${(props) => props.percent}%;
     }
 `;
 
@@ -109,13 +109,7 @@ const StyledSurveyProgressBar = styled.div`
         }
     }
 
-    ${(props) => props.percent === 2 && percent20}
-    ${(props) => props.percent === 4 && percent40}
-    ${(props) => props.percent === 6 && percent60}
-    ${(props) => props.percent === 7 && percent70}
-    ${(props) => props.percent === 8 && percent80}
-    ${(props) => props.percent === 9 && percent90}
-    ${(props) => props.percent === 10 && percent100}
+    ${(props) => props.percent && percent}
 `;
 
 export default StyledSurveyProgressBar;

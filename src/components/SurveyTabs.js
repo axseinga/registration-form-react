@@ -10,6 +10,7 @@ const SurveyTabs = (props) => {
                 const tabNum = index + 1;
                 return (
                     <SurveyTabItem
+                        key={tabNum}
                         active={props.currStep === tabNum ? true : false}
                         disabled={false}
                         handleChangeStep={props.handleChangeStep}
