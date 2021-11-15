@@ -114,11 +114,11 @@ export default function validate(name, value, value2) {
                 value2.orchids !== false ||
                 value2.palms !== false
             ) {
-                hasError = true;
-                error = "Please mark one of the options";
-            } else {
                 hasError = false;
                 error = "";
+            } else {
+                hasError = true;
+                error = "Please mark one of the options";
             }
             break;
         }

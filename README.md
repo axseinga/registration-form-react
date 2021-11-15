@@ -1,49 +1,61 @@
-> ⭐ **\*README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!\***
->
-> 🎁 _Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**._
+# devmentor.pl - React: Styling / Registration form
 
-&nbsp;
+## Table of contents
 
-# Neumorphism
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+    -   [Useful resources](#useful-resources)
+-   [Author](#author)
+-   [Acknowledgments](#acknowledgments)
 
-Neumorphism to pewien trend w projektowaniu, który opiera się na odpowiednim wykorzystaniu cieni.
+## Overview
 
-W tym projekcie Twoim zadaniem będzie utworzeniu kilku komponentów zgodnych z tym trendem wykorzystując Styled Components. Na ich podstawie zbudujesz rozbudowany formularz. Od Ciebie będzie zależeć jakie elementy będą miały się w nim pojawić.
+### The challenge
 
-Zanim przejdziesz do implementowania to zapoznaj się z kilkoma artykułami na temat nowego trendu:
+As a challenge, I had to create a form in React and style it with neomorphic elements. I had a lot of freedom to decide how my form is going to look and what it is going to include. I created a form registration to the houseplants forum.
 
--   https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6 (jeśli wykorzystałeś darmowy limit to wystarczy, że otworzyć tą stronę w oknie "imcognito")
--   https://www.justinmind.com/blog/neumorphism-ui/
--   https://opengeekslab.com/blog/neumorphism-the-next-big-thing-ui-design/
+### Screenshot
 
-n
+![](./screenshot.png)
 
-## Komponenty
+### Links
 
-Po zapoznaniu się z linkami podanymi wyżej wiesz już na czym polega Neumorphism. Jeśli potrzebujesz dodatkowych wskazówek to zachęcam Cię do [skorzystania z generatora](https://neumorphism.io/). Możesz również inspirować się [przykładami innych](https://bashooka.com/inspiration/neumorphism-ui-design-examples/).
+-   Solution URL: [Check out my code](https://github.com/axseinga/registration-form-react)
+-   Live Site URL: [and see live site here!](https://axseinga-registration-form-react.netlify.app/)
 
-Jeśli masz własną koncepcję komponentów to nie widzę przeszkód, abyś z nich skorzystał. Jeśli nie to możesz się wzorować z poniższą grafiką od [Emy Lascan](https://dribbble.com/shots/9527558-Freebie-Neumorphic-UX-UI-Elements).
+## My process
 
-![](./example.png)
+I wanted to get more practice with React functional components so I decided to split my form into tabs to create a multi-step form with a progress bar showing what step the user is. The idea was to let users navigate between tabs by clicking on a particular tab or by clicking the `next` and `previous` buttons. For the state management of the input fields, I decided to use `useReducer.js`. That allowed me to create form validation based on key and property value `hasError` and to create an error message. The inputs are validated every time user focuses out from the input field so the user is informed straight away about errors by displaying an error message under the label of the input. I tried to create my components this way I can style them with Styled Components method and re-use as many components as possible. I refactored my code as much as possible to decrease file sizes. The most troublesome for me was to create form validation based on the state so the inputs are validated after the state was changed (after the event is fired by the user).
 
-## Formularz
+### Built with
 
-W momencie kiedy masz już gotowe komponenty możesz zbudować swój formularz.
+-   React
+-   Create React app
+-   React Hooks
+-   Styled Components
 
-Pamiętaj, aby prezentował on w pełni Twoje możliwości np.:
+### What I learned
 
--   możesz go podzielić na 3 etapy (ekrany), po których można wygodnie się przemieszczać
--   lista rozwijana jest implementowana przez specjalne rozwiązanie innne niż `select`
--   elementy typu `chceckbox` czy `radio` są animowane
--   poziom wypełania formularza jest prezentowane przez pasek postępu
--   użytkownik po wprowadzeniu błędnych danych jest natychmiastowo o tym informowany
+I had a chance to learn to use `useReducer` hook in practice. I got lost while writing it and learned that in this kind of situation the best I can do is to go and read the documentation carefully to understand how something works and then try to apply it again to my code. This was a great introduction for the future learning of Redux as it gave me a lot of understanding of how actions and dispatching work. I learned as well about creating components' names dynamically and refactoring the code with data structures and map functions.
 
-Jestem pewny, że ten porojekt mocno zainteresuje Twojego przyszłego pracodawcę!
+### Useful resources
 
-PS. Konfigurację środowiska robisz według własnego uznania.
+-   [Official React website: useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer) - Documentation for useReducer Hook.
+-   [CSS Tricks](https://css-tricks.com/the-magic-of-react-based-multi-step-forms/) - The Magic of React-Based Multi-Step Forms by Nathan Sebhastian.
+-   [Font Space](https://www.fontspace.com/4yeogarden-font-f51) - 4 Yeo Garden font for images of the plants.
+-   [CSS toggle switches](https://freefrontend.com/css-toggle-switches/) - inspiration for toggle switches.
+-   [Stackoverflow: React / JSX Dynamic Components](https://stackoverflow.com/questions/29875869/react-jsx-dynamic-component-name)
 
-&nbsp;
+## Author
 
-> ⭐ **\*README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!\***
->
-> 🎁 _Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**._
+-   Frontend Mentor - [@Axseinga](https://www.frontendmentor.io/profile/yourusername)
+-   LinkedIn - [Agnieszka Urbanowicz](https://www.linkedin.com/in/agnieszka-urbanowicz-051147151/)
+
+## Acknowledgments
+
+Thanks to my [Mentor - devmentor.pl](https://devmentor.pl/) - for providing me with this task and for code review.

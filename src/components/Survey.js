@@ -59,6 +59,9 @@ const Survey = () => {
             }
         });
         if (errors !== []) {
+            alert(
+                "Form has errors. Please check all fields carefully for error messages and correct them."
+            );
             console.log("form has errors");
         } else {
             alert(
