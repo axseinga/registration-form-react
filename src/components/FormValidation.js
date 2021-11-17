@@ -124,10 +124,8 @@ export default function validate(name, value, value2, state) {
             break;
         }
         case "rules": {
-            console.log(state[value2]);
             const currState = { ...state, [value2]: !state[value2] };
             Object.values(currState).some((value) => value === true);
-            console.log(currState);
             if (
                 currState.rule1 === false ||
                 currState.rule2 === false ||
