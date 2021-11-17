@@ -43,92 +43,10 @@ const initFields = () => {
         data.rules[rule] = false;
     });
     data.rules.error = "Please accept all the rules";
-    /*
-    data.plantsAmount = {
-        value: "",
-        hasError: true,
-        error: "Please mark one of the options",
-        touched: false,
-    };
-    data.plantsFavourites = {
-        cacti: false,
-        aroids: false,
-        marantas: false,
-        begonias: false,
-        alocasias: false,
-        palms: false,
-        ferns: false,
-        orchids: false,
-        hasError: true,
-        error: "Please mark one of the options",
-        touched: false,
-    };
-    data.rules = {
-        rule1: false,
-        rule2: false,
-        rule3: false,
-        rule4: false,
-        hasError: true,
-        error: "Please accept all the rules",
-        touched: false,
-    };*/
     return data;
 };
 
 export const fields = initFields();
-
-/*const errorMsg = "Please fill in this field";
-export const fields = {
-    name: { value: "", hasError: true, error: errorMsg, touched: false },
-    surname: { value: "", hasError: true, error: errorMsg, touched: false },
-    email: { value: "", hasError: true, error: errorMsg, touched: false },
-    username: {
-        value: "",
-        hasError: true,
-        error: errorMsg,
-        touched: false,
-    },
-    password: {
-        value: "",
-        hasError: true,
-        error: errorMsg,
-        touched: false,
-    },
-    secondPassword: {
-        value: "",
-        hasError: true,
-        error: errorMsg,
-        touched: false,
-    },
-    plantsAmount: {
-        value: "",
-        hasError: true,
-        error: "Please mark one of the options",
-        touched: false,
-    },
-    plantsFavourites: {
-        cacti: false,
-        aroids: false,
-        marantas: false,
-        begonias: false,
-        alocasias: false,
-        palms: false,
-        ferns: false,
-        orchids: false,
-        hasError: true,
-        error: "Please mark one of the options",
-        touched: false,
-    },
-    rules: {
-        rule1: false,
-        rule2: false,
-        rule3: false,
-        rule4: false,
-        hasError: true,
-        error: "Please accept all the rules",
-        touched: false,
-    },
-};*/
 
 export const reducer = (state, action) => {
     switch (action.type) {
@@ -179,6 +97,16 @@ export const reducer = (state, action) => {
                 [action.name]: {
                     ...state[action.name],
                     touched: action.touched,
+                },
+            };
+        case "UPDATE_EXEMPTIONS":
+            return {
+                ...state,
+                [action.name]: {
+                    ...state[action.name],
+                    [action.newValue]: action.boleean,
+                    hasError: action.hasError,
+                    error: action.error,
                 },
             };
         case "RESET":

@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import StyledSurvey from "./styled/Survey.styled";
 import SurveyTabs from "./SurveyTabs";
 import SurveyContent from "./SurveyContent";
@@ -29,6 +29,7 @@ const Survey = () => {
 
     const handleChange = (name, value, value2) => {
         const { hasError, error } = validate(name, value, value2);
+        console.log(name, value, value2);
         dispatch({
             type: "UPDATE_ERRORS",
             name: name,
