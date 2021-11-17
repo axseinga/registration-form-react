@@ -27,9 +27,8 @@ const Survey = () => {
         setCurrentStep(step);
     };
 
-    const handleChange = (name, value, value2) => {
-        const { hasError, error } = validate(name, value, value2);
-        console.log(name, value, value2);
+    const handleChange = (name, value, value2, state) => {
+        const { hasError, error } = validate(name, value, value2, state);
         dispatch({
             type: "UPDATE_ERRORS",
             name: name,

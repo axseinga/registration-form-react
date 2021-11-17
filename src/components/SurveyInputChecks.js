@@ -25,6 +25,7 @@ const SurveyInputChecks = (props) => {
                     props.handleChange(
                         props.field,
                         e.target.value,
+                        e.target.name,
                         props.state
                     );
                 }}

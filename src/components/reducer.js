@@ -99,16 +99,6 @@ export const reducer = (state, action) => {
                     touched: action.touched,
                 },
             };
-        case "UPDATE_EXEMPTIONS":
-            return {
-                ...state,
-                [action.name]: {
-                    ...state[action.name],
-                    [action.newValue]: action.boleean,
-                    hasError: action.hasError,
-                    error: action.error,
-                },
-            };
         case "RESET":
             return fields;
         default:

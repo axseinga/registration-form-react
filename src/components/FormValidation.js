@@ -1,4 +1,4 @@
-export default function validate(name, value, value2) {
+export default function validate(name, value, value2, state) {
     let hasError = false;
     let error = "";
     switch (name) {
@@ -103,16 +103,17 @@ export default function validate(name, value, value2) {
             break;
         }
         case "plantsFavourites": {
-            console.log(value2);
+            const currState = { ...state, [value2]: !state.cacti };
+            Object.values(currState).some((value) => value === true);
             if (
-                value2.cacti !== false ||
-                value2.alocasias !== false ||
-                value2.aroids !== false ||
-                value2.begonias !== false ||
-                value2.ferns !== false ||
-                value2.marantas !== false ||
-                value2.orchids !== false ||
-                value2.palms !== false
+                currState.cacti !== false ||
+                currState.alocasias !== false ||
+                currState.aroids !== false ||
+                currState.begonias !== false ||
+                currState.ferns !== false ||
+                currState.marantas !== false ||
+                currState.orchids !== false ||
+                currState.palms !== false
             ) {
                 hasError = false;
                 error = "";
@@ -123,11 +124,15 @@ export default function validate(name, value, value2) {
             break;
         }
         case "rules": {
+            console.log(state[value2]);
+            const currState = { ...state, [value2]: !state[value2] };
+            Object.values(currState).some((value) => value === true);
+            console.log(currState);
             if (
-                value.rule1 === false ||
-                value2.rule2 === false ||
-                value2.rule3 === false ||
-                value2.rule4 === false
+                currState.rule1 === false ||
+                currState.rule2 === false ||
+                currState.rule3 === false ||
+                currState.rule4 === false
             ) {
                 hasError = true;
                 error = "Please accept all the rules";
